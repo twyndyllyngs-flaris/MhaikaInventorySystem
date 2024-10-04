@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="734.0" prefWidth="1054.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se.ShowImageController">
+   <children>
+      <AnchorPane layoutX="141.0" layoutY="108.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="787.0" style="-fx-background-color: #ebf2ed; -fx-background-radius: 15 0 15 15;">
+         <effect>
+            <DropShadow color="#949494" />
+         </effect>
+         <children>
+            <Polyline fill="#d0d0d0" layoutX="776.0" layoutY="141.0" points="11.0, 270.0, -159.0, -20.0, -713.0, -141.0, 11.0, -141.0" strokeLineCap="ROUND" strokeLineJoin="ROUND">
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0" startY="1.0">
+                     <stops>
+                        <Stop color="#c6c6c6" />
+                        <Stop color="#c6c6c6" offset="0.007662835249042145" />
+                        <Stop color="#7bffbb" offset="0.329501915708812" />
+                        <Stop color="#63e8ff" offset="0.6916301299522056" />
+                        <Stop color="#00ffc3" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+            </Polyline>
+            <Label fx:id="lbl_expenseTitle" contentDisplay="CENTER" layoutX="320.0" layoutY="141.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.8" prefHeight="95.0" prefWidth="304.0" text="Mouse, Logitech Prodigy 300, Black " textAlignment="JUSTIFY" textFill="#6b6b6b" wrapText="true">
+               <font>
+                  <Font name="Impact" size="24.0" />
+               </font>
+            </Label>
+            <HBox fx:id="hb_forExpenseImage" alignment="CENTER" layoutX="43.0" layoutY="92.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="253.0" style="-fx-background-color: transparent;">
+               <children>
+                  <ImageView fx:id="iv_expenseImage" fitHeight="330.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+                     <effect>
+                        <DropShadow color="#7c7c7c" />
+                     </effect>
+                     <image>
+                        <Image url="@noimage.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Label fx:id="lbl_description" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="320.0" layoutY="236.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="138.0" prefWidth="314.0" text="No description available for this item" textAlignment="JUSTIFY" textFill="#838383" wrapText="true">
+               <font>
+                  <Font name="Eras Light ITC" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="634.0" layoutY="48.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.85" prefHeight="62.0" prefWidth="46.0" text="#" textAlignment="JUSTIFY" textFill="#6b6b6b" wrapText="true">
+               <font>
+                  <Font name="Impact" size="35.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_expenseNumber" contentDisplay="CENTER" layoutX="669.0" layoutY="42.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.9" prefHeight="73.0" prefWidth="95.0" text="91" textAlignment="JUSTIFY" textFill="#6b6b6b" wrapText="true">
+               <font>
+                  <Font name="Impact" size="45.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <JFXButton fx:id="pb_close" layoutX="755.0" layoutY="11.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#close" prefHeight="18.0" prefWidth="18.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: orange; -fx-border-style: solid; -fx-border-color: #808080; -fx-border-width: 1; -fx-border-radius: 50 50 50 50;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

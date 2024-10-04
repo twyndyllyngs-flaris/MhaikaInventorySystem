@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="799.0" prefWidth="775.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se.SignUp1Controller">
+   <children>
+      <AnchorPane layoutX="203.0" layoutY="134.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="328.0" style="-fx-background-radius: 10px; -fx-background-color: #ebf2ed;">
+         <children>
+            <JFXTextField fx:id="tf_adminUsername" alignment="CENTER" focusColor="#b58436" layoutX="50.0" layoutY="159.0" opacity="0.75" prefHeight="45.0" prefWidth="229.0" promptText="Admin Username" unFocusColor="#ae8585" />
+            <JFXPasswordField fx:id="pf_adminPassword" alignment="CENTER" focusColor="#b58436" layoutX="52.0" layoutY="246.0" opacity="0.75" prefHeight="45.0" prefWidth="229.0" promptText="Admin Password" unFocusColor="#ae8585" />
+            <Label fx:id="lbl_message" alignment="CENTER" layoutY="412.0" opacity="0.5" prefHeight="65.0" prefWidth="328.0" text="An admin account is required to create an account" />
+            <JFXButton fx:id="pb_continue" buttonType="RAISED" layoutX="72.0" layoutY="334.0" onAction="#submit" prefHeight="45.0" prefWidth="184.0" ripplerFill="#ffcc00" style="-fx-background-color: #b58436;" text="Continue" textFill="#dcdd7a">
+               <font>
+                  <Font name="Gadugi" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="pb_close" layoutX="296.0" layoutY="12.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#close" prefHeight="18.0" prefWidth="18.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: orange; -fx-border-style: solid; -fx-border-color: #808080; -fx-border-width: 1; -fx-border-radius: 50 50 50 50;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton fx:id="pb_back" layoutX="14.0" layoutY="9.0" onAction="#back" text="" textFill="#8a8a8a">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <Label layoutX="153.0" layoutY="113.0" opacity="0.75" text="1 / 5" />
+            <JFXButton fx:id="lbl_notice" layoutX="152.0" layoutY="477.0" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#hover" onMouseExited="#hoverExit" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: orange;" text="!" textFill="WHITE" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <ImageView fitHeight="197.0" fitWidth="211.0" layoutX="270.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo_transparent.png" />
+         </image>
+         <effect>
+            <DropShadow radius="9.2575" spread="0.12" width="18.03" />
+         </effect>
+      </ImageView>
+      <Line endX="23.0" endY="-1.52587890625E-5" layoutX="405.0" layoutY="689.0" startX="-100.0" stroke="#e7eaa0" strokeWidth="5.0">
+         <effect>
+            <DropShadow color="#8c8c8c" />
+         </effect>
+      </Line>
+      <Label layoutX="237.0" layoutY="186.0" opacity="0.75" text="AUTHENTICATION">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

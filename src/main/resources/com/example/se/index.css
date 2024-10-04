@@ -1,0 +1,7 @@
+#pb_signUp{
+    -fx-text-fill: orange;
+}
+
+#pb_signUp:hover{
+    -fx-text-fill:  #ff005d;
+}

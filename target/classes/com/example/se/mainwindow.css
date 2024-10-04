@@ -1,0 +1,61 @@
+.scroll-pane > .corner {
+    -fx-background-color: transparent;
+}
+
+.tree-table-cell {
+    -fx-alignment: center;
+    -fx-text-fill: #555c58;
+}
+
+.scroll-bar:horizontal,
+.scroll-bar:horizontal *.increment-button,
+.scroll-bar:horizontal *.decrement-button,
+.scroll-bar:horizontal *.increment-arrow,
+.scroll-bar:horizontal *.decrement-arrow {
+    -fx-padding: 0;
+}
+
+.button_aeds{
+    -fx-background-color:  #ffefe3;
+    -fx-background-radius: 50 50 50 50;
+    -fx-border-color: #bababa;
+    -fx-border-radius: 50 50 50 50;
+    -fx-text-fill: #8a9c9c;
+}
+
+.button_aeds:hover{
+    -fx-background-radius: 20 20 20 20;
+    -fx-border-radius: 20 20 20 20;
+}
+
+.filter-clear{
+    -fx-background-color:  #fcfcfa;
+}
+
+.filter-clear:hover{
+    -fx-background-radius: 50 50 50 50;
+    -fx-border-color:  #009688;
+    -fx-border-radius: 50 50 50 50;
+}
+
+.account-account-user-tf{
+    -jfx-unfocus-color: #d4d4d4 !important;
+}
+
+.account-button-valid{
+    -fx-background-color: #79ed77 !important;
+}
+
+#account_dp_birthDate .jfx-text-field{
+    -jfx-unfocus-color: #fcfcfa;
+    -fx-padding: 0 10 0 0;
+    -fx-alignment: center;
+    -fx-font-family: Impact;
+    -fx-font-size: 18;
+    -fx-text-fill:  #969696;
+}
+
+.account-account-user-dp .jfx-text-field{
+    -jfx-unfocus-color: #d4d4d4 !important;
+}
+

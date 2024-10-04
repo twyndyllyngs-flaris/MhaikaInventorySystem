@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1081.0" prefWidth="917.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se.Vendor4Controller">
+    <children>
+        <AnchorPane layoutX="292.0" layoutY="131.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="779.0" prefWidth="328.0" style="-fx-background-radius: 10px; -fx-background-color: #ebf2ed;">
+            <children>
+                <JFXTextField fx:id="tf_productType" alignment="TOP_LEFT" focusColor="#b58436" layoutX="50.0" layoutY="160.0" opacity="0.75" prefHeight="45.0" prefWidth="229.0" promptText="Product Type" unFocusColor="#ae8585">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </JFXTextField>
+                <Label fx:id="lbl_message" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="638.0" opacity="0.5" prefHeight="65.0" prefWidth="328.0" text="Skip expiration date if entry doesnt have one" textAlignment="CENTER" wrapText="true">
+                    <padding>
+                        <Insets left="30.0" right="25.0" />
+                    </padding>
+                </Label>
+                <JFXButton fx:id="pb_continue" layoutX="73.0" layoutY="569.0" onAction="#submit" prefHeight="45.0" prefWidth="185.0" ripplerFill="#ffcc00" style="-fx-background-color: #ffb17d;" text="Continue" textFill="#eeeeda">
+                    <font>
+                        <Font name="Gadugi Bold" size="17.0" />
+                    </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+                </JFXButton>
+                <JFXButton fx:id="pb_close" layoutX="296.0" layoutY="12.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#close" prefHeight="18.0" prefWidth="18.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: orange; -fx-border-style: solid; -fx-border-color: #808080; -fx-border-width: 1; -fx-border-radius: 50 50 50 50;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+                <Label layoutX="156.0" layoutY="115.0" opacity="0.75" text="4 / 5" />
+                <JFXButton fx:id="lbl_notice" layoutX="144.0" layoutY="716.0" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#hover" onMouseExited="#hoverExit" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: #05e6bc;" text="!" textFill="WHITE" />
+                <JFXTextField fx:id="tf_productName" alignment="TOP_LEFT" focusColor="#b58436" layoutX="50.0" layoutY="240.0" opacity="0.75" prefHeight="45.0" prefWidth="229.0" promptText="Product Name " unFocusColor="#ae8585">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </JFXTextField>
+                <JFXTextField fx:id="tf_variant" alignment="TOP_LEFT" focusColor="#b58436" layoutX="50.0" layoutY="320.0" opacity="0.75" prefHeight="45.0" prefWidth="229.0" promptText="Variant" unFocusColor="#ae8585">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </JFXTextField>
+                <JFXButton fx:id="pb_back" layoutX="20.0" layoutY="12.0" onAction="#back" text="" textFill="#8a8a8a">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXTextField fx:id="tf_price" alignment="TOP_LEFT" focusColor="#b58436" layoutX="50.0" layoutY="400.0" opacity="0.75" prefHeight="45.0" prefWidth="229.0" promptText="Price" unFocusColor="#ae8585">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXDatePicker fx:id="dp_expirationDate" defaultColor="#b58436" editable="false" layoutX="48.0" layoutY="480.0" opacity="0.75" prefHeight="45.0" prefWidth="268.0" promptText="Expiration Date" />
+            </children>
+            <effect>
+                <DropShadow />
+            </effect>
+        </AnchorPane>
+        <Line endX="23.0" endY="-1.52587890625E-5" layoutX="497.0" layoutY="943.0" startX="-100.0" stroke="#e7eaa0" strokeWidth="5.0">
+            <effect>
+                <Glow />
+            </effect>
+        </Line>
+        <Label layoutX="325.0" layoutY="193.0" opacity="0.75" text="PRODUCT DETAILS">
+            <font>
+                <Font name="System Bold" size="30.0" />
+            </font>
+        </Label>
+        <ImageView fx:id="iv_logo" fitHeight="212.0" fitWidth="218.0" layoutX="353.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@logo_transparent.png" />
+            </image>
+            <effect>
+                <DropShadow radius="9.2575" spread="0.12" width="18.03" />
+            </effect>
+        </ImageView>
+    </children>
+</AnchorPane>

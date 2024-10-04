@@ -1,0 +1,1193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1106.0" prefWidth="1936.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se.MainWindowController">
+   <children>
+      <AnchorPane layoutX="78.0" layoutY="40.0" prefHeight="960.0" prefWidth="1760.0" style="-fx-background-radius: 15 15 15 15; -fx-background-color: WHITE;">
+         <children>
+            <Label fx:id="pane_top" prefHeight="49.0" prefWidth="1760.0" style="-fx-background-color: #dae0dc #dae0dc; -fx-background-radius: 15 15 0 0;">
+               <effect>
+                  <DropShadow color="#b9b0b0" height="7.5" offsetY="1.5" radius="2.625" width="5.0" />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Label>
+            <JFXButton fx:id="pb_close" layoutX="1715.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#exitApplication" prefHeight="22.0" prefWidth="22.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-background-radius: 50 50 50 50; -fx-border-color: grey; -fx-border-radius: 50 50 50 50;" textFill="#898989">
+               <font>
+                  <Font size="6.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label fx:id="lbl_windowTitle" alignment="CENTER" contentDisplay="CENTER" layoutX="625.0" layoutY="-1.0" onMouseEntered="#title_hover" onMouseExited="#title_hoverExit" opacity="0.7" prefHeight="52.0" prefWidth="528.0" text="Expenses" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_name" layoutX="52.0" layoutY="-1.0" opacity="0.75" prefHeight="51.0" prefWidth="404.0" text="Ralph Matthew De Leon">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_roleIcon" layoutX="27.0" opacity="0.8" prefHeight="49.0" prefWidth="21.0" text="">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="pb_logout" layoutX="1680.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#logout" prefHeight="22.0" prefWidth="22.0" ripplerFill="WHITE" style="-fx-background-color: orange; -fx-background-radius: 50 50 50 50; -fx-border-color: grey; -fx-border-radius: 50 50 50 50;" text="Button">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="pb_minimize" layoutX="1645.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#minimize" prefHeight="22.0" prefWidth="22.0" ripplerFill="WHITE" style="-fx-background-color: yellow; -fx-background-radius: 50 50 50 50; -fx-border-color: grey; -fx-border-radius: 50 50 50 50;" textFill="#898989">
+               <font>
+                  <Font size="6.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label layoutY="49.0" prefHeight="913.0" prefWidth="278.0" style="-fx-background-color: #ebf2ed; -fx-background-radius: 0 0 0 15;" textFill="#8a8a8a" />
+            <Label fx:id="lbl_expenses" alignment="CENTER" contentDisplay="CENTER" layoutX="57.0" layoutY="85.0" onMouseClicked="#show_expenses" prefHeight="81.0" prefWidth="222.0" style="-fx-background-color: #fcfcfa; -fx-background-radius: 25 0 0 25;" text="" textAlignment="CENTER" textFill="#8a8a8a">
+               <effect>
+                  <DropShadow color="#b9aeae" height="11.0" offsetX="-3.0" radius="4.75" width="10.0" />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="lbl_inventory" alignment="CENTER" contentDisplay="CENTER" layoutX="57.0" layoutY="170.0" onMouseClicked="#show_inventory" prefHeight="81.0" prefWidth="222.0" style="-fx-background-radius: 25 0 0 25;" text="" textAlignment="CENTER" textFill="#8a8a8a">
+               <effect>
+                  <DropShadow color="#e1dbdb" height="32.93" offsetX="-8.0" radius="14.405000000000001" width="26.69" />
+               </effect>
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="lbl_transactions" alignment="CENTER" contentDisplay="CENTER" layoutX="57.0" layoutY="255.0" onMouseClicked="#show_transactions" prefHeight="81.0" prefWidth="222.0" style="-fx-background-radius: 25 0 0 25;" text="" textAlignment="CENTER" textFill="#8a8a8a">
+               <effect>
+                  <DropShadow color="#e1dbdb" height="32.93" offsetX="-8.0" radius="14.405000000000001" width="26.69" />
+               </effect>
+               <font>
+                  <Font name="Nirmala UI" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="lbl_account" alignment="CENTER" contentDisplay="CENTER" layoutX="57.0" layoutY="850.0" onMouseClicked="#show_account" prefHeight="81.0" prefWidth="222.0" style="-fx-background-radius: 25 0 0 25;" text="" textAlignment="CENTER" textFill="#8a8a8a">
+               <effect>
+                  <DropShadow color="#e1dbdb" height="32.93" offsetX="-8.0" radius="14.405000000000001" width="26.69" />
+               </effect>
+               <font>
+                  <Font name="Nirmala UI" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="lbl_vendors" alignment="CENTER" contentDisplay="CENTER" layoutX="57.0" layoutY="340.0" onMouseClicked="#show_vendors" prefHeight="81.0" prefWidth="222.0" style="-fx-background-radius: 25 0 0 25;" text="" textAlignment="CENTER" textFill="#8a8a8a">
+               <effect>
+                  <DropShadow color="#e1dbdb" height="32.93" offsetX="-8.0" radius="14.405000000000001" width="26.69" />
+               </effect>
+               <font>
+                  <Font name="Nirmala UI" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="lbl_accounts" alignment="CENTER" contentDisplay="CENTER" layoutX="57.0" layoutY="765.0" onMouseClicked="#show_accounts" prefHeight="81.0" prefWidth="222.0" style="-fx-background-radius: 25 0 0 25;" text="" textAlignment="CENTER" textFill="#8a8a8a">
+               <effect>
+                  <DropShadow color="#e1dbdb" height="32.93" offsetX="-8.0" radius="14.405000000000001" width="26.69" />
+               </effect>
+               <font>
+                  <Font name="Nirmala UI" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="lbl_charts" alignment="CENTER" contentDisplay="CENTER" layoutX="57.0" layoutY="425.0" onMouseClicked="#show_charts" prefHeight="81.0" prefWidth="222.0" style="-fx-background-radius: 25 0 0 25;" text="" textAlignment="CENTER" textFill="#8a8a8a">
+               <effect>
+                  <DropShadow color="#e1dbdb" height="32.93" offsetX="-8.0" radius="14.405000000000001" width="26.69" />
+               </effect>
+               <font>
+                  <Font name="Nirmala UI" size="28.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <StackPane fx:id="sp_main" layoutX="278.0" layoutY="49.0" prefHeight="911.0" prefWidth="1482.0" style="-fx-background-color: f0ebe4; -fx-background-radius: 0 0 15 0;">
+               <effect>
+                  <DropShadow color="#b9b0b0" height="0.0" offsetX="-1.0" radius="2.0" width="10.0" />
+               </effect>
+               <children>
+                  <AnchorPane fx:id="ap_sales" layoutX="10.0" layoutY="10.0" onMouseClicked="#clearSalesSelection" prefHeight="588.0" prefWidth="989.0" style="-fx-background-color: #fcfcfa; -fx-background-radius: 0 0 15 0;">
+                     <children>
+                        <ScrollPane fx:id="sales_sp_main" layoutX="232.0" layoutY="201.0" prefHeight="712.0" prefWidth="1251.0" style="-fx-background-radius: 25 25 25 25; -fx-border-radius: 25 25 25 25; -fx-background-color: transparent;" vbarPolicy="ALWAYS">
+                           <effect>
+                              <DropShadow color="#c3c0c0" height="0.0" offsetX="-1.0" offsetY="-1.0" radius="2.0" width="10.0" />
+                           </effect>
+                           <content>
+                              <JFXTreeTableView fx:id="sales_ttv_main" blendMode="MULTIPLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="697.0" prefWidth="2148.0" showRoot="false" style="-fx-background-color: #fcfcfa;">
+                                 <columns>
+                                    <TreeTableColumn fx:id="sales_col_saleNumber" prefWidth="187.0" style="-fx-border-style: none;" text="Sale Number" />
+                                    <TreeTableColumn fx:id="sales_col_userID" prefWidth="187.0" style="-fx-border-style: none;" text="User ID" />
+                                    <TreeTableColumn fx:id="sales_col_productName" prefWidth="278.0" style="-fx-border-style: none;" text="Product" />
+                                    <TreeTableColumn fx:id="sales_col_quantity" prefWidth="187.0" style="-fx-border-style: none;" text="Quantity / Amount" />
+                                    <TreeTableColumn fx:id="sales_col_price" prefWidth="187.0" style="-fx-border-style: none;" text="Price" />
+                                    <TreeTableColumn fx:id="sales_col_totalPrice" prefWidth="187.0" style="-fx-border-style: none;" text="Total Price" />
+                                    <TreeTableColumn fx:id="sales_col_totalBill" prefWidth="187.0" style="-fx-border-style: none;" text="Total Bill" />
+                                    <TreeTableColumn fx:id="sales_col_cash" prefWidth="187.0" style="-fx-border-style: none;" text="Cash" />
+                                    <TreeTableColumn fx:id="sales_col_changeAmount" prefWidth="187.0" style="-fx-border-style: none;" text="Change Amount" />
+                                    <TreeTableColumn fx:id="sales_col_receiptID" prefWidth="187.0" style="-fx-border-style: none;" text="Receipt ID" />
+                                    <TreeTableColumn fx:id="sales_col_saleDate" prefWidth="187.0" style="-fx-border-style: none;" text="Sale Date" />
+                                 </columns>
+                              </JFXTreeTableView>
+                           </content>
+                        </ScrollPane>
+                        <Line endX="220.0" endY="97.0" layoutX="-104.0" layoutY="180.0" opacity="0.5" startX="220.0" startY="-81.0" stroke="#828282" />
+                        <Line endX="424.0" endY="38.5" layoutX="479.0" layoutY="60.0" opacity="0.5" startX="-363.5" startY="38.5" stroke="#828282" />
+                        <Line endX="173.5" endY="38.0" layoutX="730.0" layoutY="60.0" opacity="0.5" startX="259.0" startY="-42.0" stroke="#828282" />
+                        <Line endX="458.0" endY="-70.70710754394531" layoutX="991.0" layoutY="88.0" opacity="0.5" startX="-1.2928466796875" startY="-70.70710754394531" stroke="#828282" />
+                        <Polyline fill="#828282" layoutX="937.0" layoutY="170.0" opacity="0.1" points="-41.0, -82.0, 32.0, -150.04046630859375, -823.0, -150.04046630859375, -823.0, -81.99998474121094" strokeType="INSIDE" />
+                        <JFXButton fx:id="sales_button_add" layoutX="90.0" layoutY="315.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#sales_add" prefHeight="55.0" prefWidth="55.0" styleClass="button_aeds" text="" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="sales_button_showReceipt" layoutX="90.0" layoutY="415.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#createReceipt" prefHeight="55.0" prefWidth="55.0" styleClass="button_aeds" text="" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="sales_button_save" layoutX="90.0" layoutY="715.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="55.0" styleClass="button_aeds" text="" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXDatePicker fx:id="sales_dp_startingDate" editable="false" layoutX="500.0" layoutY="110.0" onAction="#searchSales" opacity="0.75" prefHeight="50.0" prefWidth="200.0" promptText="Starting Date" />
+                        <JFXDatePicker fx:id="sales_dp_endingDate" editable="false" layoutX="750.0" layoutY="110.0" onAction="#searchSales" opacity="0.75" prefHeight="50.0" prefWidth="200.0" promptText="Ending Date" />
+                        <JFXComboBox fx:id="sales_cb_column" focusColor="#009688" layoutX="1000.0" layoutY="110.0" onAction="#searchSales" opacity="0.75" prefHeight="50.0" prefWidth="190.0" promptText="Column">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXComboBox>
+                        <JFXTextField fx:id="sales_tf_search" focusColor="#009688" layoutX="1250.0" layoutY="110.0" opacity="0.75" prefHeight="50.0" prefWidth="190.0" promptText="Search From Column" />
+                        <JFXButton fx:id="sales_button_clearStartingDate" layoutX="642.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#sales_clearStartingDate" prefHeight="22.0" prefWidth="22.0" ripplerFill="#009688" styleClass="filter-clear" text="" textFill="#898989">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="sales_button_clearEndingDate" layoutX="891.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#sales_clearEndingDate" prefHeight="22.0" prefWidth="22.0" ripplerFill="#009688" styleClass="filter-clear" text="" textFill="#898989">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="sales_button_clearSearch" layoutX="1418.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#sales_clearSearch" prefHeight="22.0" prefWidth="22.0" ripplerFill="#009688" styleClass="filter-clear" text="" textFill="#898989">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Label fx:id="sales_message" layoutX="170.0" layoutY="38.0" opacity="0.7" text="Date filters are solely for &quot;Sale Date&quot; field">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="sales_button_message" layoutX="125.0" layoutY="32.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#sales_message" prefHeight="38.0" prefWidth="38.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: #05e6bc;" text="!" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXCheckBox fx:id="sales_cb_searchExactMatch" layoutX="1255.0" layoutY="50.0" onAction="#searchSales" opacity="0.7" text="Search by exact match">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXCheckBox>
+                        <JFXButton fx:id="sales_button_toInventory" layoutX="90.0" layoutY="515.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#sales_inventory" prefHeight="55.0" prefWidth="55.0" styleClass="button_aeds" text="" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="sales_button_toVendors" layoutX="90.0" layoutY="615.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#sales_users" prefHeight="55.0" prefWidth="55.0" styleClass="button_aeds" text="" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ap_inventory" onMouseClicked="#clearInventorySelection" prefHeight="588.0" prefWidth="1482.0" style="-fx-background-color: #fcfcfa; -fx-background-radius: 0 0 15 0;">
+                     <children>
+                        <ScrollPane fx:id="inventory_sp_main" layoutX="232.0" layoutY="201.0" prefHeight="712.0" prefWidth="1251.0" style="-fx-background-radius: 25 25 25 25; -fx-border-radius: 25 25 25 25; -fx-background-color: transparent;" vbarPolicy="ALWAYS">
+                           <effect>
+                              <DropShadow color="#c3c0c0" height="0.0" offsetX="-1.0" offsetY="-1.0" radius="2.0" width="10.0" />
+                           </effect>
+                           <content>
+                              <JFXTreeTableView fx:id="inventory_ttv_main" blendMode="MULTIPLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="697.0" prefWidth="2714.0" showRoot="false" style="-fx-background-color: #fcfcfa;">
+                                 <columns>
+                                    <TreeTableColumn fx:id="inventory_col_productID" prefWidth="148.66668701171875" style="-fx-border-style: none;" text="ProductID" />
+                                    <TreeTableColumn fx:id="inventory_col_expenseNumber" prefWidth="196.3333740234375" style="-fx-border-style: none;" text="Expense Number" />
+                                    <TreeTableColumn fx:id="inventory_col_expenseTitle" onEditCommit="#expense_expenseTitleCommit" prefWidth="283.00006103515625" text="Expense Title" />
+                                    <TreeTableColumn fx:id="inventory_col_productType" onEditCommit="#inventory_productTypeCommit" prefWidth="203.0" style="-fx-border-style: none;" text="Product Type" />
+                                    <TreeTableColumn fx:id="inventory_col_productName" onEditCommit="#inventory_productNameCommit" prefWidth="203.0" style="-fx-border-style: none;" text="Product Name" />
+                                    <TreeTableColumn fx:id="inventory_col_variant" onEditCommit="#inventory_variantCommit" prefWidth="216.33331298828125" style="-fx-border-style: none;" text="Variant" />
+                                    <TreeTableColumn fx:id="inventory_col_stock" prefWidth="203.0" style="-fx-border-style: none;" text="Stock" />
+                                    <TreeTableColumn fx:id="inventory_col_price" onEditCommit="#inventory_priceCommit" onEditStart="#inventory_priceStart" prefWidth="203.0" style="-fx-border-style: none;" text="Price" />
+                                    <TreeTableColumn fx:id="inventory_col_description" prefWidth="251.0" text="Description" />
+                                    <TreeTableColumn fx:id="inventory_col_expirationDate" onEditCommit="#inventory_expirationDateCommit" onEditStart="#inventory_expirationDateStart" prefWidth="203.0" style="-fx-border-style: none;" text="Expiration Date" />
+                                    <TreeTableColumn fx:id="inventory_col_criticalLevel" prefWidth="203.0" style="-fx-border-style: none;" text="Critical Level" />
+                                    <TreeTableColumn fx:id="inventory_col_dateAdded" prefWidth="203.0" style="-fx-border-style: none;" text="Date Added" />
+                                    <TreeTableColumn fx:id="inventory_col_status" prefWidth="197.33349609375" text="Status" />
+                                 </columns>
+                              </JFXTreeTableView>
+                           </content>
+                        </ScrollPane>
+                        <Line endX="220.0" endY="97.0" layoutX="-104.0" layoutY="180.0" opacity="0.5" startX="220.0" startY="-81.0" stroke="#828282" />
+                        <Line endX="424.0" endY="38.5" layoutX="479.0" layoutY="60.0" opacity="0.5" startX="-363.5" startY="38.5" stroke="#828282" />
+                        <Line endX="173.5" endY="38.0" layoutX="730.0" layoutY="60.0" opacity="0.5" startX="259.0" startY="-42.0" stroke="#828282" />
+                        <Line endX="458.0" endY="-70.70710754394531" layoutX="991.0" layoutY="88.0" opacity="0.5" startX="-1.2928466796875" startY="-70.70710754394531" stroke="#828282" />
+                        <Polyline fill="#828282" layoutX="937.0" layoutY="170.0" opacity="0.1" points="-41.0, -82.0, 32.0, -150.04046630859375, -823.0, -150.04046630859375, -823.0, -81.99998474121094" strokeType="INSIDE" />
+                        <JFXButton fx:id="inventory_button_add" layoutX="90.0" layoutY="315.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#inventory_add" prefHeight="55.0" prefWidth="55.0" styleClass="button_aeds" text="" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="inventory_button_show" layoutX="90.0" layoutY="415.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#showProductImage" prefHeight="55.0" prefWidth="55.0" styleClass="button_aeds" text="" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="inventory_button_save" layoutX="90.0" layoutY="715.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#saveExpenseTable" prefHeight="55.0" prefWidth="55.0" styleClass="button_aeds" text="" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXComboBox fx:id="inventory_cb_dateColumn" focusColor="#009688" layoutX="250.0" layoutY="110.0" onAction="#searchInventory" opacity="0.75" prefHeight="50.0" prefWidth="190.0" promptText="Date Column">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXComboBox>
+                        <JFXDatePicker fx:id="inventory_dp_startingDate" editable="false" layoutX="500.0" layoutY="110.0" onAction="#searchInventory" opacity="0.75" prefHeight="50.0" prefWidth="200.0" promptText="Starting Date" />
+                        <JFXDatePicker fx:id="inventory_dp_endingDate" editable="false" layoutX="750.0" layoutY="110.0" onAction="#searchInventory" opacity="0.75" prefHeight="50.0" prefWidth="200.0" promptText="Ending Date" />
+                        <JFXComboBox fx:id="inventory_cb_column" focusColor="#009688" layoutX="1000.0" layoutY="110.0" onAction="#searchInventory" opacity="0.75" prefHeight="50.0" prefWidth="190.0" promptText="Column">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXComboBox>
+                        <JFXTextField fx:id="inventory_tf_search" focusColor="#009688" layoutX="1250.0" layoutY="110.0" onAction="#searchInventory" opacity="0.75" prefHeight="50.0" prefWidth="190.0" promptText="Search From Column" />
+                        <JFXCheckBox fx:id="inventory_cb_includeCancelledRecords" layoutX="1234.0" layoutY="50.0" onAction="#searchInventory" opacity="0.7" text="Include inactive records">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXCheckBox>
+                        <Label fx:id="inventory_message" layoutX="170.0" layoutY="38.0" opacity="0.7" text="Date filters are for date-added field">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXCheckBox fx:id="inventory_cb_searchExactMatch" layoutX="1000.0" layoutY="50.0" onAction="#searchInventory" opacity="0.75" text="Search by exact match">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXCheckBox>
+                        <JFXButton fx:id="inventory_button_message" layoutX="125.0" layoutY="32.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#inventory_message" prefHeight="38.0" prefWidth="38.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: #05e6bc;" text="!" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="inventory_button_clearStartingDate" layoutX="642.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#inventory_clearStartingDate" prefHeight="22.0" prefWidth="22.0" ripplerFill="#009688" styleClass="filter-clear" text="" textFill="#898989">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="inventory_button_clearEndingDate" layoutX="891.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#inventory_clearEndingDate" prefHeight="22.0" prefWidth="22.0" ripplerFill="#009688" styleClass="filter-clear" text="" textFill="#898989">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="inventory_button_clearSearch" layoutX="1418.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#inventory_clearSearch" prefHeight="22.0" prefWidth="22.0" ripplerFill="#009688" styleClass="filter-clear" text="" textFill="#898989">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="inventory_button_toExpenses" layoutX="90.0" layoutY="515.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#inventory_expenses" prefHeight="55.0" prefWidth="55.0" styleClass="button_aeds" text="" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="inventory_button_toTransactions" layoutX="90.0" layoutY="615.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#inventory_sales" prefHeight="55.0" prefWidth="55.0" styleClass="button_aeds" text="" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ap_vendors" onMouseClicked="#clearVendorsSelection" prefHeight="588.0" prefWidth="989.0" style="-fx-background-color: #fcfcfa; -fx-background-radius: 0 0 15 0;">
+                     <children>
+                        <ScrollPane fx:id="vendors_sp_main" layoutX="232.0" layoutY="201.0" prefHeight="712.0" prefWidth="1251.0" style="-fx-background-radius: 25 25 25 25; -fx-border-radius: 25 25 25 25; -fx-background-color: transparent;" vbarPolicy="ALWAYS">
+                           <effect>
+                              <DropShadow color="#c3c0c0" height="0.0" offsetX="-1.0" offsetY="-1.0" radius="2.0" width="10.0" />
+                           </effect>
+                           <content>
+                              <JFXTreeTableView fx:id="vendors_ttv_main" blendMode="MULTIPLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="697.0" prefWidth="1586.0" showRoot="false" style="-fx-background-color: #fcfcfa;">
+                                 <columns>
+                                    <TreeTableColumn fx:id="vendors_col_companyName" onEditCommit="#expense_companyNameCommit" prefWidth="234.0" text="Company Name" />
+                                    <TreeTableColumn fx:id="vendors_col_firstName" onEditCommit="#vendors_firstNameCommit" onEditStart="#vendors_firstNameStart" prefWidth="207.33331298828125" text="First Name" />
+                                    <TreeTableColumn fx:id="vendors_col_lastName" onEditCommit="#vendors_lastNameCommit" onEditStart="#vendors_lastNameStart" prefWidth="182.666748046875" text="Last Name" />
+                                    <TreeTableColumn fx:id="vendors_col_displayName" onEditCommit="#vendors_displayNameCommit" prefWidth="200.0" text="Display Name" />
+                                    <TreeTableColumn fx:id="vendors_col_email" onEditCommit="#vendors_emailCommit" prefWidth="188.0" text="Email" />
+                                    <TreeTableColumn fx:id="vendors_col_workPhone" onEditCommit="#vendors_workPhoneCommit" prefWidth="179.3333740234375" text="Work Phone" />
+                                    <TreeTableColumn fx:id="vendors_col_phoneNumber" onEditCommit="#vendors_phoneNumberCommit" prefWidth="197.33349609375" text="Phone Number" />
+                                    <TreeTableColumn fx:id="vendors_col_website" onEditCommit="#vendors_websiteCommit" prefWidth="198.0" text="Website" />
+                                 </columns>
+                              </JFXTreeTableView>
+                           </content>
+                        </ScrollPane>
+                        <Line endX="220.0" endY="224.0" layoutX="-104.0" layoutY="180.0" opacity="0.5" startX="220.0" startY="-81.0" stroke="#828282" />
+                        <Line endX="424.0" endY="38.5" layoutX="479.0" layoutY="60.0" opacity="0.5" startX="-363.5" startY="38.5" stroke="#828282" />
+                        <Line endX="173.5" endY="38.0" layoutX="730.0" layoutY="60.0" opacity="0.5" startX="259.0" startY="-42.0" stroke="#828282" />
+                        <Line endX="458.0" endY="-70.70710754394531" layoutX="991.0" layoutY="88.0" opacity="0.5" startX="-1.2928466796875" startY="-70.70710754394531" stroke="#828282" />
+                        <Polyline fill="#828282" layoutX="937.0" layoutY="170.0" opacity="0.1" points="-41.0, -82.0, 32.0, -150.04046630859375, -823.0, -150.04046630859375, -823.0, -81.99998474121094" strokeType="INSIDE" />
+                        <JFXButton fx:id="vendors_button_save" layoutX="90.0" layoutY="520.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#saveExpenseTable" prefHeight="55.0" prefWidth="55.0" styleClass="button_aeds" text="" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXComboBox fx:id="vendors_cb_column" focusColor="#009688" layoutX="977.0" layoutY="110.0" onAction="#searchVendors" opacity="0.75" prefHeight="50.0" prefWidth="190.0" promptText="Column">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXComboBox>
+                        <JFXTextField fx:id="vendors_tf_search" focusColor="#009688" layoutX="1236.0" layoutY="110.0" onAction="#show_vendors" opacity="0.75" prefHeight="50.0" prefWidth="190.0" promptText="Search From Column" />
+                        <Label fx:id="vendors_message" layoutX="170.0" layoutY="38.0" opacity="0.7" text="To search for records with no value, type &quot;null&quot; on the search field">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXCheckBox fx:id="vendors_cb_searchExactMatch" layoutX="1234.0" layoutY="50.0" onAction="#searchVendors" opacity="0.7" text="Search by exact match">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXCheckBox>
+                        <JFXButton fx:id="vendors_button_message" layoutX="125.0" layoutY="32.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#vendors_message" prefHeight="38.0" prefWidth="38.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: #05e6bc;" text="!" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="vendors_button_clearSearch" layoutX="1400.0" layoutY="111.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#vendors_clearSearch" prefHeight="22.0" prefWidth="22.0" ripplerFill="#009688" styleClass="filter-clear" text="" textFill="#898989">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="vendors_button_toExpense" layoutX="90.0" layoutY="428.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#vendors_expenses" prefHeight="55.0" prefWidth="55.0" styleClass="button_aeds" text="" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ap_account" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="909.0" prefWidth="1483.0" style="-fx-background-color: #fcfcfa; -fx-background-radius: 0 0 15 0;">
+                     <children>
+                        <Line endX="-314.66668701171875" endY="53.666656494140625" layoutX="923.0" layoutY="116.0" startX="-381.33331298828125" startY="-65.0" stroke="#ababab" />
+                        <Polyline fill="#ffb17d" layoutX="273.0" layoutY="195.0" points="-179.33334350585938, -113.33334350585938, 91.33331298828125, -113.33334350585938, 116.0, -42.66667175292969, -179.33331298828125, -42.666656494140625" stroke="#ffb17d" strokeType="INSIDE" strokeWidth="2.0" />
+                        <Polyline fx:id="account_pl_accountUser" fill="#00c9a4" layoutX="560.0" layoutY="195.0" points="-177.0, -113.33334350585938, -25.0, -113.33334350585938, 17.66668701171875, -42.666656494140625, -153.0, -42.666656494140625" stroke="#00c9a4" strokeType="INSIDE" strokeWidth="2.0" />
+                        <Polyline fx:id="account_pl_name" fill="#00c9a4" layoutX="771.0" layoutY="189.0" points="-197.33331298828125, -127.33334350585938, 160.0, -127.33334350585938, 116.0, -42.666656494140625, -148.0, -42.66667175292969" stroke="#ffefe3" strokeType="INSIDE" strokeWidth="2.0">
+                           <effect>
+                              <DropShadow color="#979797" height="5.0" radius="2.0" width="5.0" />
+                           </effect>
+                        </Polyline>
+                        <Label layoutX="743.0" layoutY="248.0" opacity="0.5" prefHeight="52.0" prefWidth="95.0" text="Role">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="115.0" layoutY="200.0" opacity="0.6" prefHeight="52.0" prefWidth="95.0" text="Username">
+                           <font>
+                              <Font name="Symbol" size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="account_button_accountDetails" layoutX="381.0" layoutY="80.0" onAction="#account_editAccountUserDetails" onMouseEntered="#account_accountUserHover" onMouseExited="#account_accountUserHoverExit" prefHeight="77.0" prefWidth="198.0" style="-fx-background-radius: 0 45 0 45;" text="" textFill="WHITE">
+                           <font>
+                              <Font name="Impact" size="24.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Label layoutX="131.0" layoutY="91.0" prefHeight="52.0" prefWidth="206.0" text="Account / User Details" textFill="WHITE">
+                           <font>
+                              <Font name="Impact" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="account_lbl_name" alignment="CENTER" contentDisplay="CENTER" layoutX="625.0" layoutY="69.0" prefHeight="69.0" prefWidth="264.0" text="RALPH MATTHEW DE LEON" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Impact" size="22.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="8.0" />
+                           </padding>
+                        </Label>
+                        <Line endX="8.0" endY="1.0000152587890625" layoutX="833.0" layoutY="245.0" startX="-161.0" startY="1.0000152587890625" stroke="#ababab" strokeWidth="1.5" />
+                        <Label fx:id="account_lbl_role" alignment="CENTER" contentDisplay="CENTER" layoutX="673.0" layoutY="178.0" prefHeight="61.0" prefWidth="169.0" text="ADMINISTRATOR" textAlignment="CENTER" textFill="#ababab">
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label layoutX="115.0" layoutY="330.0" opacity="0.6" prefHeight="52.0" prefWidth="95.0" text="Password">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="115.0" layoutY="460.0" opacity="0.6" prefHeight="52.0" prefWidth="95.0" text="Firstname">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="115.0" layoutY="590.0" opacity="0.6" prefHeight="52.0" prefWidth="95.0" text="Lastname">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="account_tf_username" alignment="CENTER" editable="false" focusColor="#ababab" layoutX="225.0" layoutY="195.0" prefHeight="61.0" prefWidth="275.0" style="-fx-font-family: Impact; -fx-font-size: 18; -fx-text-fill: #969696;" unFocusColor="#fcfcfa" />
+                        <JFXTextField fx:id="account_tf_password" alignment="CENTER" editable="false" focusColor="#ababab" layoutX="225.0" layoutY="325.0" prefHeight="61.0" prefWidth="275.0" style="-fx-font-family: Impact; -fx-font-size: 18; -fx-text-fill: #969696;" unFocusColor="#fcfcfa" />
+                        <JFXTextField fx:id="account_tf_firstName" alignment="CENTER" editable="false" focusColor="#ababab" layoutX="225.0" layoutY="455.0" prefHeight="61.0" prefWidth="275.0" style="-fx-font-family: Impact; -fx-font-size: 18; -fx-text-fill: #969696;" unFocusColor="#fcfcfa" />
+                        <JFXTextField fx:id="account_tf_lastName" alignment="CENTER" editable="false" focusColor="#ababab" layoutX="225.0" layoutY="585.0" prefHeight="61.0" prefWidth="275.0" style="-fx-font-family: Impact; -fx-font-size: 18; -fx-text-fill: #969696;" unFocusColor="#fcfcfa" />
+                        <Line endX="-851.3333740234375" endY="-72.0" layoutX="933.0" layoutY="126.0" startX="-390.0" startY="-72.0" stroke="#ababab" />
+                        <Line endX="-323.60601806640625" endY="703.0" layoutX="931.0" layoutY="126.0" startX="-323.60601806640625" startY="44.727325439453125" stroke="#ababab" />
+                        <Label layoutX="734.0" layoutY="377.0" opacity="0.5" prefHeight="52.0" prefWidth="95.0" text="User ID">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Line endX="8.0" endY="1.0000152587890625" layoutX="833.0" layoutY="375.0" startX="-161.0" startY="1.0000152587890625" stroke="#ababab" strokeWidth="1.5" />
+                        <Label fx:id="account_lbl_userID" alignment="CENTER" contentDisplay="CENTER" layoutX="670.0" layoutY="308.0" prefHeight="61.0" prefWidth="169.0" text="# 23" textAlignment="CENTER" textFill="#ababab">
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label layoutX="744.0" layoutY="507.0" opacity="0.5" prefHeight="52.0" prefWidth="95.0" text="Age">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Line endX="8.0" endY="1.0000152587890625" layoutX="833.0" layoutY="505.0" startX="-161.0" startY="1.0000152587890625" stroke="#ababab" strokeWidth="1.5" />
+                        <Label fx:id="account_lbl_age" alignment="CENTER" contentDisplay="CENTER" layoutX="673.0" layoutY="437.0" prefHeight="61.0" prefWidth="169.0" text="20" textAlignment="CENTER" textFill="#ababab">
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Label layoutX="713.0" layoutY="768.0" opacity="0.5" prefHeight="52.0" prefWidth="95.0" text="Date Created">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Line endX="8.0" endY="1.0000152587890625" layoutX="833.0" layoutY="765.0" startX="-161.0" startY="1.0000152587890625" stroke="#ababab" strokeWidth="1.5" />
+                        <Polyline fill="#ffb17d" layoutX="1331.0" layoutY="194.0" points="-182.3333740234375, -113.33332824707031, 83.5, -113.33334350585938, 83.5, -42.772705078125, -209.0, -42.772705078125" stroke="#ffb17d" strokeType="INSIDE" strokeWidth="2.0" />
+                        <Polyline fx:id="account_pl_contactAddress" fill="#00c9a4" layoutX="1150.0" layoutY="191.0" points="-173.63636779785156, -107.54545593261719, -28.02444076538086, -107.54547882080078, -52.41842269897461, -42.99998092651367, -207.15174865722656, -43.0" scaleX="1.1" scaleY="1.1" stroke="#00c9a4" strokeType="INSIDE" strokeWidth="2.0">
+                           <rotationAxis>
+                              <Point3D />
+                           </rotationAxis>
+                        </Polyline>
+                        <Label layoutX="975.0" layoutY="306.0" prefHeight="52.0" prefWidth="150.0" text="Account Details" textFill="#f8f7f7">
+                           <font>
+                              <Font name="Impact" size="22.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="account_button_contactAddress" layoutX="933.0" layoutY="79.0" onAction="#account_editContactAddress" onMouseEntered="#account_contactAddressHover" onMouseExited="#account_contactAddressHoverExit" prefHeight="74.0" prefWidth="198.0" style="-fx-background-radius: 45 0 40 0;" text="" textFill="WHITE">
+                           <font>
+                              <Font name="Impact" size="24.0" />
+                           </font>
+                           <rotationAxis>
+                              <Point3D z="3.0" />
+                           </rotationAxis>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Line endX="-228.5" endY="30.5" layoutX="1134.0" layoutY="135.0" startX="-170.5" startY="-81.5" stroke="#ababab" />
+                        <Line endX="-324.0" endY="699.5" layoutX="1227.0" layoutY="126.0" startX="-323.60601806640625" startY="44.727325439453125" stroke="#ababab" />
+                        <Line endX="-851.3333740234375" endY="-72.0" layoutX="1815.0" layoutY="126.0" startX="-390.0" startY="-72.0" stroke="#ababab" />
+                        <Label layoutX="1191.0" layoutY="88.0" prefHeight="52.0" prefWidth="183.0" text="Contact / Address" textFill="WHITE">
+                           <font>
+                              <Font name="Impact" size="22.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="account_button_username" layoutX="537.0" layoutY="214.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#account_showUsernameMessage" prefHeight="30.0" prefWidth="30.0" ripplerFill="WHITE" style="-fx-background-color: #ff4a83; -fx-background-radius: 50 50 50 50; -fx-border-radius: 50 50 50 50;" textFill="#898989" visible="false">
+                           <font>
+                              <Font size="6.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="account_button_password" layoutX="537.0" layoutY="344.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#account_showPasswordMessage" prefHeight="30.0" prefWidth="30.0" ripplerFill="WHITE" style="-fx-background-color: #ff4a83; -fx-background-radius: 50 50 50 50; -fx-border-radius: 50 50 50 50;" textFill="#898989" visible="false">
+                           <font>
+                              <Font size="6.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="account_button_firstName" layoutX="537.0" layoutY="474.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#account_showFirstNameMessage" prefHeight="30.0" prefWidth="30.0" ripplerFill="WHITE" style="-fx-background-color: #ff4a83; -fx-background-radius: 50 50 50 50; -fx-border-radius: 50 50 50 50;" textFill="#898989" visible="false">
+                           <font>
+                              <Font size="6.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="account_button_lastName" layoutX="537.0" layoutY="604.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#account_showLastNameMessage" prefHeight="30.0" prefWidth="30.0" ripplerFill="WHITE" style="-fx-background-color: #ff4a83; -fx-background-radius: 50 50 50 50; -fx-border-radius: 50 50 50 50;" textFill="#898989" visible="false">
+                           <font>
+                              <Font size="6.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Label layoutX="115.0" layoutY="720.0" opacity="0.6" prefHeight="52.0" prefWidth="95.0" text="Birthdate">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="account_button_birthDate" layoutX="538.0" layoutY="734.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#account_showBirthDateMessage" prefHeight="30.0" prefWidth="30.0" ripplerFill="WHITE" style="-fx-background-color: #ff4a83; -fx-background-radius: 50 50 50 50; -fx-border-radius: 50 50 50 50;" textFill="#898989" visible="false">
+                           <font>
+                              <Font size="6.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Label layoutX="745.0" layoutY="638.0" opacity="0.5" prefHeight="52.0" prefWidth="95.0" text="Sex">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Line endX="8.0" endY="1.0000152587890625" layoutX="833.0" layoutY="635.0" startX="-161.0" startY="1.0000152587890625" stroke="#ababab" strokeWidth="1.5" />
+                        <Circle fill="#05e6bc" layoutX="543.0" layoutY="54.0" radius="5.0" stroke="#ababab" strokeLineCap="BUTT" />
+                        <Circle fill="#05e6bc" layoutX="757.0" layoutY="247.0" radius="5.0" stroke="#ababab" strokeLineCap="BUTT" />
+                        <Circle fill="#05e6bc" layoutX="607.0" layoutY="168.0" radius="5.0" stroke="#ababab" strokeLineCap="BUTT" />
+                        <Circle fill="#05e6bc" layoutX="757.0" layoutY="377.0" radius="5.0" stroke="#ababab" strokeLineCap="BUTT" />
+                        <Circle fill="#05e6bc" layoutX="757.0" layoutY="506.0" radius="5.0" stroke="#ababab" strokeLineCap="BUTT" />
+                        <Circle fill="#05e6bc" layoutX="757.0" layoutY="767.0" radius="5.0" stroke="#ababab" strokeLineCap="BUTT" />
+                        <Circle fill="#05e6bc" layoutX="903.0" layoutY="168.0" radius="5.0" stroke="#ababab" strokeLineCap="BUTT" />
+                        <Circle fill="#05e6bc" layoutX="964.0" layoutY="54.0" radius="5.0" stroke="#ababab" strokeLineCap="BUTT" />
+                        <Circle fill="#05e6bc" layoutX="81.0" layoutY="53.0" radius="5.0" stroke="#ababab" strokeLineCap="BUTT" />
+                        <Circle fill="#05e6bc" layoutX="608.0" layoutY="825.0" radius="5.0" stroke="#ababab" strokeLineCap="BUTT" />
+                        <Circle fill="#05e6bc" layoutX="903.0" layoutY="829.0" radius="5.0" stroke="#ababab" strokeLineCap="BUTT" />
+                        <Circle fill="#05e6bc" layoutX="1426.0" layoutY="54.0" radius="5.0" stroke="#ababab" strokeLineCap="BUTT" />
+                        <Circle fill="#05e6bc" layoutX="757.0" layoutY="637.0" radius="5.0" stroke="#ababab" strokeLineCap="BUTT" />
+                        <Label fx:id="account_lbl_sex" alignment="CENTER" contentDisplay="CENTER" layoutX="673.0" layoutY="568.0" prefHeight="61.0" prefWidth="169.0" text="MALE" textAlignment="CENTER" textFill="#ababab">
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <ScrollPane layoutX="942.0" layoutY="182.0" prefHeight="654.0" prefWidth="503.0" style="-fx-background-color: #fcfcfa;">
+                           <content>
+                              <AnchorPane prefHeight="1052.0" prefWidth="487.0" style="-fx-background-color: #fcfcfa;">
+                                 <children>
+                                    <Label layoutX="12.0" layoutY="18.0" opacity="0.6" prefHeight="52.0" prefWidth="95.0" text="Phone">
+                                       <font>
+                                          <Font name="Symbol" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="12.0" layoutY="148.0" opacity="0.6" prefHeight="52.0" prefWidth="95.0" text="Telephone">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="12.0" layoutY="278.0" opacity="0.6" prefHeight="52.0" prefWidth="95.0" text="Email">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="12.0" layoutY="408.0" opacity="0.6" prefHeight="52.0" prefWidth="95.0" text="Province">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXTextField fx:id="account_tf_phone" alignment="CENTER" editable="false" focusColor="#ababab" layoutX="122.0" layoutY="13.0" prefHeight="61.0" prefWidth="275.0" style="-fx-font-family: Impact; -fx-font-size: 18; -fx-text-fill: #969696;" unFocusColor="#fcfcfa" />
+                                    <JFXTextField fx:id="account_tf_telephone" alignment="CENTER" editable="false" focusColor="#ababab" layoutX="122.0" layoutY="143.0" prefHeight="61.0" prefWidth="275.0" style="-fx-font-family: Impact; -fx-font-size: 18; -fx-text-fill: #969696;" unFocusColor="#fcfcfa" />
+                                    <JFXTextField fx:id="account_tf_email" alignment="CENTER" editable="false" focusColor="#ababab" layoutX="122.0" layoutY="273.0" prefHeight="61.0" prefWidth="275.0" style="-fx-font-family: Impact; -fx-font-size: 18; -fx-text-fill: #969696;" unFocusColor="#fcfcfa" />
+                                    <JFXTextField fx:id="account_tf_province" alignment="CENTER" editable="false" focusColor="#ababab" layoutX="122.0" layoutY="403.0" prefHeight="61.0" prefWidth="275.0" style="-fx-font-family: Impact; -fx-font-size: 18; -fx-text-fill: #969696;" unFocusColor="#fcfcfa" />
+                                    <JFXButton fx:id="account_button_phone" layoutX="434.0" layoutY="32.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#account_showPhoneMessage" prefHeight="30.0" prefWidth="30.0" ripplerFill="WHITE" style="-fx-background-color: #ff4a83; -fx-background-radius: 50 50 50 50; -fx-border-radius: 50 50 50 50;" textFill="#898989" visible="false">
+                                       <font>
+                                          <Font size="6.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <JFXButton fx:id="account_button_telephone" layoutX="434.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#account_showTelephoneMessage" prefHeight="30.0" prefWidth="30.0" ripplerFill="WHITE" style="-fx-background-color: #ff4a83; -fx-background-radius: 50 50 50 50; -fx-border-radius: 50 50 50 50;" textFill="#898989" visible="false">
+                                       <font>
+                                          <Font size="6.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <JFXButton fx:id="account_button_email" layoutX="434.0" layoutY="292.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#account_showEmailMessage" prefHeight="30.0" prefWidth="30.0" ripplerFill="WHITE" style="-fx-background-color: #ff4a83; -fx-background-radius: 50 50 50 50; -fx-border-radius: 50 50 50 50;" textFill="#898989" visible="false">
+                                       <font>
+                                          <Font size="6.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <JFXButton fx:id="account_button_province" layoutX="434.0" layoutY="422.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#account_showProvinceMessage" prefHeight="30.0" prefWidth="30.0" ripplerFill="WHITE" style="-fx-background-color: #ff4a83; -fx-background-radius: 50 50 50 50; -fx-border-radius: 50 50 50 50;" textFill="#898989" visible="false">
+                                       <font>
+                                          <Font size="6.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <Label layoutX="12.0" layoutY="530.0" opacity="0.6" prefHeight="52.0" prefWidth="95.0" text="City">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="12.0" layoutY="660.0" opacity="0.6" prefHeight="52.0" prefWidth="95.0" text="Barangay">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="12.0" layoutY="790.0" opacity="0.6" prefHeight="52.0" prefWidth="95.0" text="Street">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="12.0" layoutY="920.0" opacity="0.6" prefHeight="52.0" prefWidth="95.0" text="Postal Code">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXTextField fx:id="account_tf_city" alignment="CENTER" editable="false" focusColor="#ababab" layoutX="122.0" layoutY="525.0" prefHeight="61.0" prefWidth="275.0" style="-fx-font-family: Impact; -fx-font-size: 18; -fx-text-fill: #969696;" unFocusColor="#fcfcfa" />
+                                    <JFXTextField fx:id="account_tf_barangay" alignment="CENTER" editable="false" focusColor="#ababab" layoutX="122.0" layoutY="655.0" prefHeight="61.0" prefWidth="275.0" style="-fx-font-family: Impact; -fx-font-size: 18; -fx-text-fill: #969696;" unFocusColor="#fcfcfa" />
+                                    <JFXTextField fx:id="account_tf_street" alignment="CENTER" editable="false" focusColor="#ababab" layoutX="122.0" layoutY="785.0" prefHeight="61.0" prefWidth="275.0" style="-fx-font-family: Impact; -fx-font-size: 18; -fx-text-fill: #969696;" unFocusColor="#fcfcfa" />
+                                    <JFXTextField fx:id="account_tf_postalCode" alignment="CENTER" editable="false" focusColor="#ababab" layoutX="122.0" layoutY="915.0" prefHeight="61.0" prefWidth="275.0" style="-fx-font-family: Impact; -fx-font-size: 18; -fx-text-fill: #969696;" unFocusColor="#fcfcfa" />
+                                    <JFXButton fx:id="account_button_city" layoutX="434.0" layoutY="544.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#account_showCityMessage" prefHeight="30.0" prefWidth="30.0" ripplerFill="WHITE" style="-fx-background-color: #ff4a83; -fx-background-radius: 50 50 50 50; -fx-border-radius: 50 50 50 50;" textFill="#898989" visible="false">
+                                       <font>
+                                          <Font size="6.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <JFXButton fx:id="account_button_barangay" layoutX="434.0" layoutY="674.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#account_showBarangayMessage" prefHeight="30.0" prefWidth="30.0" ripplerFill="WHITE" style="-fx-background-color: #ff4a83; -fx-background-radius: 50 50 50 50; -fx-border-radius: 50 50 50 50;" textFill="#898989" visible="false">
+                                       <font>
+                                          <Font size="6.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <JFXButton fx:id="account_button_street" layoutX="434.0" layoutY="804.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#account_showStreetMessage" prefHeight="30.0" prefWidth="30.0" ripplerFill="WHITE" style="-fx-background-color: #ff4a83; -fx-background-radius: 50 50 50 50; -fx-border-radius: 50 50 50 50;" textFill="#898989" visible="false">
+                                       <font>
+                                          <Font size="6.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <JFXButton fx:id="account_button_postalCode" layoutX="434.0" layoutY="934.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#account_showPostalCodeMessage" prefHeight="30.0" prefWidth="30.0" ripplerFill="WHITE" style="-fx-background-color: #ff4a83; -fx-background-radius: 50 50 50 50; -fx-border-radius: 50 50 50 50;" textFill="#898989" visible="false">
+                                       <font>
+                                          <Font size="6.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                        <Label fx:id="account_lbl_dateCreated" alignment="CENTER" contentDisplay="CENTER" layoutX="672.0" layoutY="700.0" prefHeight="61.0" prefWidth="169.0" text="06-16-2001" textAlignment="CENTER" textFill="#ababab">
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <JFXDatePicker fx:id="account_dp_birthDate" editable="false" layoutX="225.0" layoutY="715.0" onAction="#account_birthDateChange" prefHeight="61.0" prefWidth="275.0">
+                           <padding>
+                              <Insets left="45.0" />
+                           </padding>
+                        </JFXDatePicker>
+                        <Label fx:id="account_lbl_birthDatePatch" layoutX="459.0" layoutY="730.0" prefHeight="32.0" prefWidth="43.0" style="-fx-background-color: #fcfcfa;" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ap_charts" layoutX="10.0" layoutY="10.0" onMouseClicked="#clearSelection" prefHeight="588.0" prefWidth="989.0" style="-fx-background-color: #fcfcfa; -fx-background-radius: 0 0 15 0;">
+                     <children>
+                        <ScrollPane fx:id="charts_scp_charts" layoutX="74.0" layoutY="235.0" prefHeight="550.0" prefWidth="950.0">
+                           <content>
+                              <StackPane fx:id="charts_sp_charts">
+                                 <children>
+                                    <AreaChart fx:id="charts_areaChart" animated="false" minHeight="520.0" minWidth="920.0">
+                                       <xAxis>
+                                          <CategoryAxis fx:id="charts_areaChartCategoryAxis" side="BOTTOM" />
+                                       </xAxis>
+                                       <yAxis>
+                                          <NumberAxis fx:id="charts_areaChart_numberAxis" side="LEFT" />
+                                       </yAxis>
+                                    </AreaChart>
+                                    <BarChart fx:id="charts_barChart" minHeight="500.0" minWidth="920.0" title="Bar Chart" visible="false">
+                                      <xAxis>
+                                        <CategoryAxis fx:id="charts_barChartCategoryAxis" side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis fx:id="charts_barChart_numberAxis" side="LEFT" />
+                                      </yAxis>
+                                    </BarChart>
+                                    <PieChart fx:id="charts_pieChart" minHeight="500.0" minWidth="920.0" title="Pie Chart" visible="false" />
+                                 </children>
+                              </StackPane>
+                           </content>
+                        </ScrollPane>
+                        <Line endX="811.0" layoutX="204.0" layoutY="112.0" startX="-146.0" stroke="#828282" />
+                        <Line endX="801.5" endY="-10.500030517578125" layoutX="214.0" layoutY="122.0" startX="894.0" startY="-96.33333587646484" stroke="#828282" />
+                        <Line endX="894.70703125" endY="-97.04044342041016" layoutX="214.0" layoutY="122.0" startX="1216.6666259765625" startY="-97.04044342041016" stroke="#828282" />
+                        <Polyline fill="#828282" layoutX="1047.0" layoutY="175.0" opacity="0.1" points="-43.0, -75.0, 39.0, -150.0404510498047, -990.0, -150.0404510498047, -990.0, -75.0" strokeType="INSIDE" />
+                        <JFXButton fx:id="charts_button_add" layoutX="1305.0" layoutY="156.0" onAction="#addItem" prefHeight="41.0" prefWidth="127.0" ripplerFill="WHITE" style="-fx-background-color: #60aec5;" text="Add" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="charts_button_message" layoutX="70.0" layoutY="45.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#charts_message" prefHeight="36.0" prefWidth="36.0" ripplerFill="WHITE" style="-fx-background-radius: 50 50 50 50; -fx-background-color: #05e6bc;" text="!" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Label fx:id="charts_message" layoutX="115.0" layoutY="30.0" opacity="0.7" prefHeight="65.0" prefWidth="890.0" text="Check &quot;Include all except&quot; to select everything in the item dropdown " wrapText="true">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="charts_lbl_compare" alignment="CENTER" contentDisplay="CENTER" layoutX="1090.0" layoutY="81.0" opacity="0.75" prefHeight="45.0" prefWidth="361.0" text="COMPARE ITEMS">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="charts_lbl_chartTitle" alignment="CENTER" layoutX="73.0" layoutY="815.0" opacity="0.6" prefHeight="19.0" prefWidth="957.0" text="Number of sales made (June 2021 - June 2022)">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXListView fx:id="charts_lv_items" layoutX="1108.0" layoutY="235.0" prefHeight="550.0" prefWidth="328.0" style="-fx-border-color: #f7d497; -fx-background-color: #f5f6f7;" />
+                        <JFXComboBox fx:id="charts_cb_data" focusColor="#009688" layoutX="179.0" layoutY="152.0" onAction="#dataChanged" opacity="0.75" prefHeight="50.0" prefWidth="155.0" promptText="Data">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXComboBox>
+                        <JFXComboBox fx:id="charts_cb_item" focusColor="#009688" layoutX="1110.0" layoutY="145.0" opacity="0.75" prefHeight="50.0" prefWidth="166.0" promptText="Item">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXComboBox>
+                        <JFXComboBox fx:id="charts_cb_chartType" focusColor="#009688" layoutX="369.0" layoutY="152.0" onAction="#chartTypeChanged" opacity="0.75" prefHeight="50.0" prefWidth="155.0" promptText="Chart Type">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXComboBox>
+                        <JFXCheckBox fx:id="charts_ckb_except" layoutX="1120.0" layoutY="815.0" onAction="#except" opacity="0.75" text="Include all except">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXCheckBox>
+                        <JFXButton fx:id="charts_button_clearItems" layoutX="1360.0" layoutY="805.0" onAction="#clearItems" opacity="0.6" prefHeight="41.0" prefWidth="71.0" ripplerFill="#a4a4a4" text="" textFill="#4a4a4a">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXComboBox fx:id="charts_cb_time" focusColor="#009688" layoutX="569.0" layoutY="152.0" onAction="#TimeChanged" opacity="0.75" prefHeight="50.0" prefWidth="155.0" promptText="Time">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXComboBox>
+                        <JFXComboBox fx:id="charts_cb_date" disable="true" focusColor="#009688" layoutX="769.0" layoutY="152.0" onAction="#dateChanged" opacity="0.75" prefHeight="50.0" prefWidth="155.0" promptText="Year / Month">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXComboBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ap_accounts" onMouseClicked="#clearAccountsSelection" prefHeight="588.0" prefWidth="989.0" style="-fx-background-color: #fcfcfa; -fx-background-radius: 0 0 15 0;">
+                     <children>
+                        <ScrollPane fx:id="accounts_sp_main" layoutX="232.0" layoutY="201.0" prefHeight="712.0" prefWidth="1251.0" style="-fx-background-radius: 25 25 25 25; -fx-border-radius: 25 25 25 25; -fx-background-color: transparent;" vbarPolicy="ALWAYS">
+                           <effect>
+                              <DropShadow color="#c3c0c0" height="0.0" offsetX="-1.0" offsetY="-1.0" radius="2.0" width="10.0" />
+                           </effect>
+                           <content>
+                              <JFXTreeTableView fx:id="accounts_ttv_main" blendMode="MULTIPLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="697.0" prefWidth="2215.0" showRoot="false" style="-fx-background-color: #fcfcfa;">
+                                 <columns>
+                                    <TreeTableColumn fx:id="accounts_col_role" prefWidth="172.3333740234375" text="Role" />
+                                    <TreeTableColumn fx:id="accounts_col_userID" prefWidth="148.66668701171875" style="-fx-border-style: none;" text="User ID" />
+                                    <TreeTableColumn fx:id="accounts_col_username" onEditCommit="#accounts_usernameCommit" onEditStart="#accounts_usernameStart" prefWidth="218.33331298828125" text="Username" />
+                                    <TreeTableColumn fx:id="accounts_col_password" onEditCommit="#accounts_passwordCommit" onEditStart="#accounts_passwordStart" prefWidth="218.33331298828125" text="Password" />
+                                    <TreeTableColumn fx:id="accounts_col_firstName" prefWidth="215.0" text="First Name" />
+                                    <TreeTableColumn fx:id="accounts_col_lastName" prefWidth="207.0" text="Last Name" />
+                                    <TreeTableColumn fx:id="accounts_col_phoneNumber" prefWidth="207.0" text="Phone Number" />
+                                    <TreeTableColumn fx:id="accounts_col_telephone" prefWidth="207.0" text="Telephone" />
+                                    <TreeTableColumn fx:id="accounts_col_email" prefWidth="225.6666259765625" text="Email" />
+                                    <TreeTableColumn fx:id="accounts_col_dateCreated" prefWidth="191.0" text="Date Created" />
+                                    <TreeTableColumn fx:id="accounts_col_status" onEditCommit="#accounts_statusCommit" onEditStart="#accounts_statusStart" prefWidth="191.0" text="Status" />
+                                 </columns>
+                              </JFXTreeTableView>
+                           </content>
+                        </ScrollPane>
+                        <Line endX="220.0" endY="200.0" layoutX="-104.0" layoutY="180.0" opacity="0.5" startX="220.0" startY="-81.0" stroke="#828282" />
+                        <Line endX="424.0" endY="38.5" layoutX="479.0" layoutY="60.0" opacity="0.5" startX="-363.5" startY="38.5" stroke="#828282" />
+                        <Line endX="173.5" endY="38.0" layoutX="730.0" layoutY="60.0" opacity="0.5" startX="259.0" startY="-42.0" stroke="#828282" />
+                        <Line endX="458.0" endY="-70.70710754394531" layoutX="991.0" layoutY="88.0" opacity="0.5" startX="-1.2928466796875" startY="-70.70710754394531" stroke="#828282" />
+                        <Polyline fill="#828282" layoutX="937.0" layoutY="170.0" opacity="0.1" points="-41.0, -82.0, 32.0, -150.04046630859375, -823.0, -150.04046630859375, -823.0, -81.99998474121094" strokeType="INSIDE" />
+                        <JFXButton fx:id="inventory_button_save1" layoutX="90.0" layoutY="600.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="55.0" styleClass="button_aeds" text="" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="inventory_button_add1" layoutX="90.0" layoutY="400.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#accounts_add" prefHeight="55.0" prefWidth="55.0" styleClass="button_aeds" text="" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXDatePicker fx:id="accounts_dp_startingDate" editable="false" layoutX="500.0" layoutY="110.0" onAction="#searchAccounts" opacity="0.75" prefHeight="50.0" prefWidth="200.0" promptText="Starting Date" />
+                        <JFXDatePicker fx:id="accounts_dp_endingDate" editable="false" layoutX="750.0" layoutY="110.0" onAction="#searchAccounts" opacity="0.75" prefHeight="50.0" prefWidth="200.0" promptText="Ending Date" />
+                        <JFXComboBox fx:id="accounts_cb_column" focusColor="#009688" layoutX="1000.0" layoutY="110.0" onAction="#searchAccounts" opacity="0.75" prefHeight="50.0" prefWidth="190.0" promptText="Column">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXComboBox>
+                        <JFXTextField fx:id="accounts_tf_search" focusColor="#009688" layoutX="1250.0" layoutY="110.0" onAction="#searchAccounts" opacity="0.75" prefHeight="50.0" prefWidth="190.0" promptText="Search From Column" />
+                        <JFXCheckBox fx:id="accounts_cb_includeDisabledAccounts" layoutX="1234.0" layoutY="50.0" onAction="#searchAccounts" opacity="0.7" text="Include disabled accounts">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXCheckBox>
+                        <JFXCheckBox fx:id="accounts_cb_searchExactMatch" layoutX="1000.0" layoutY="50.0" onAction="#searchAccounts" opacity="0.7" text="Search by exact match">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXCheckBox>
+                        <Label fx:id="accounts_message" layoutX="170.0" layoutY="38.0" opacity="0.7" text="Date filters are solely for &quot;Date Created&quot; field">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="accounts_button_message" layoutX="125.0" layoutY="32.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#accounts_message" prefHeight="38.0" prefWidth="38.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: #05e6bc;" text="!" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="accounts_button_clearStartingDate" layoutX="642.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#accounts_clearStartingDate" prefHeight="22.0" prefWidth="22.0" ripplerFill="#009688" styleClass="filter-clear" text="" textFill="#898989">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="accounts_button_clearEndingDate" layoutX="891.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#accounts_clearEndingDate" prefHeight="22.0" prefWidth="22.0" ripplerFill="#009688" styleClass="filter-clear" text="" textFill="#898989">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="accounts_button_clearSearch" layoutX="1418.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#accounts_clearSearch" prefHeight="22.0" prefWidth="22.0" ripplerFill="#009688" styleClass="filter-clear" text="" textFill="#898989">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="inventory_button_toTransactions1" layoutX="90.0" layoutY="500.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#accounts_sales" prefHeight="55.0" prefWidth="55.0" styleClass="button_aeds" text="" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ap_expenses" onMouseClicked="#clearSelection" prefHeight="588.0" prefWidth="989.0" style="-fx-background-color: #fcfcfa; -fx-background-radius: 0 0 15 0;">
+                     <children>
+                        <ScrollPane fx:id="expenses_sp_main" layoutX="232.0" layoutY="201.0" prefHeight="712.0" prefWidth="1251.0" style="-fx-background-radius: 25 25 25 25; -fx-border-radius: 25 25 25 25; -fx-background-color: transparent;" vbarPolicy="ALWAYS">
+                           <effect>
+                              <DropShadow color="#c3c0c0" height="0.0" offsetX="-1.0" offsetY="-1.0" radius="2.0" width="10.0" />
+                           </effect>
+                           <content>
+                              <JFXTreeTableView fx:id="expenses_ttv_main" blendMode="MULTIPLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="697.0" prefWidth="4530.0" showRoot="false" style="-fx-background-color: #fcfcfa;">
+                                 <columns>
+                                    <TreeTableColumn fx:id="expenses_col_expenseNumber" prefWidth="187.0" style="-fx-border-style: none;" text="Expense Number" />
+                                    <TreeTableColumn fx:id="expenses_col_type" prefWidth="258.0" text="Expense Type" />
+                                    <TreeTableColumn fx:id="expenses_col_companyName" onEditCancel="#expense_companyNameCancel" onEditCommit="#expense_companyNameCommit" onEditStart="#expense_companyNameStart" prefWidth="204.0" text="Company Name" />
+                                    <TreeTableColumn fx:id="expenses_col_expenseTitle" onEditCancel="#expense_expenseTitleCancel" onEditCommit="#expense_expenseTitleCommit" onEditStart="#expense_expenseTitleStart" prefWidth="283.00006103515625" text="Expense Title" />
+                                    <TreeTableColumn fx:id="expenses_col_measurement" minWidth="6.6666259765625" prefWidth="160.0" text="Measurement" />
+                                    <TreeTableColumn fx:id="expenses_col_quantity" minWidth="6.6666259765625" prefWidth="150.0" text="Quantity / Amount" />
+                                    <TreeTableColumn fx:id="expenses_col_costPerItem" minWidth="7.3333740234375" prefWidth="151.666748046875" text="Cost Per Item" />
+                                    <TreeTableColumn fx:id="expenses_col_totalItemCost" minWidth="0.0" onEditCancel="#expense_totalItemCostCancel" onEditCommit="#expense_totalItemCommit" onEditStart="#expense_totalItemCostStart" prefWidth="142.0" text="Total Item Cost" />
+                                    <TreeTableColumn fx:id="expenses_col_description" prefWidth="251.0" text="Description" />
+                                    <TreeTableColumn fx:id="expenses_col_deliverTo" onEditCancel="#expense_deliverToCancel" onEditCommit="#expense_deliverToCommit" onEditStart="#expense_deliverToStart" prefWidth="279.0" text="Deliver To" />
+                                    <TreeTableColumn fx:id="expenses_col_deliveredFrom" onEditCancel="#expense_deliveredFromCancel" onEditCommit="#expense_deliveredFromCommit" onEditStart="#expense_deliveredFromStart" prefWidth="293.0" text="Delivered From" />
+                                    <TreeTableColumn fx:id="expenses_col_shipmentPreference" onEditCancel="#expenses_shipmentPreferenceCancel" onEditCommit="#expenses_shipmentPreferenceCommit" onEditStart="#expenses_shipmentPreferenceStart" prefWidth="270.66650390625" text="Shipment Preference" />
+                                    <TreeTableColumn fx:id="expenses_col_trackingNumber" onEditCancel="#expenses_trackingNumberCancel" onEditCommit="#expenses_trackingNumberCommit" onEditStart="#expenses_trackingNumberStart" prefWidth="299.66668701171875" text="Tracking Number" />
+                                    <TreeTableColumn fx:id="expenses_col_deliveryFees" onEditCancel="#expenses_deliveryFeesCancel" onEditCommit="#expenses_deliveryFeesCommit" onEditStart="#expenses_deliveryFeesStart" prefWidth="158.0" text="Delivery Fees" />
+                                    <TreeTableColumn fx:id="expenses_col_expectedDeliveryDate" onEditCancel="#expenses_expectedDeliveryDateCancel" onEditCommit="#expenses_expectedDeliveryDateCommit" onEditStart="#expenses_expectedDeliveryDateStart" prefWidth="201.0" text="Expected Delivery Date" />
+                                    <TreeTableColumn fx:id="expenses_col_dateDelivered" onEditCancel="#expense_dateDeliveredCancelled" onEditCommit="#expense_dateDeliveredPicked" onEditStart="#expense_dateDeliveredDoubleClicked" prefWidth="200.0" text="Date Delivered" />
+                                    <TreeTableColumn fx:id="expenses_col_paymentDate" onEditCommit="#expenses_paymentDateCommit" onEditStart="#expenses_paymentDateStart" prefWidth="200.0" text="Payment Date" />
+                                    <TreeTableColumn fx:id="expenses_col_paymentTerms" prefWidth="258.33349609375" text="Payment Terms" />
+                                    <TreeTableColumn fx:id="expenses_col_totalExpenseCost" minWidth="0.0" prefWidth="190.0" text="Total Expense Cost" />
+                                    <TreeTableColumn fx:id="expenses_col_dateAdded" prefWidth="181.333251953125" text="Date Added" />
+                                    <TreeTableColumn fx:id="expenses_col_status" onEditCancel="#expense_cancelled" onEditCommit="#expense_statusPicked" onEditStart="#expense_statusDoubleClicked" prefWidth="197.33349609375" text="Status" />
+                                    <TreeTableColumn fx:id="expenses_col_companyName1" onEditCancel="#expense_companyNameCancel" onEditCommit="#expense_companyNameCommit" onEditStart="#expense_companyNameStart" prefWidth="204.0" text="Company Name" />
+                                 </columns>
+                              </JFXTreeTableView>
+                           </content>
+                        </ScrollPane>
+                        <Polyline fill="#828282" layoutX="937.0" layoutY="170.0" opacity="0.1" points="-41.0, -82.0, 32.0, -150.04046630859375, -823.0, -150.04046630859375, -823.0, -81.99998474121094" strokeType="INSIDE" />
+                        <JFXButton fx:id="expenses_button_add" layoutX="90.0" layoutY="315.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#expenses_add" prefHeight="55.0" prefWidth="55.0" ripplerFill="#dadada" styleClass="button_aeds" text="" textFill="RED">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="expenses_button_show" layoutX="90.0" layoutY="415.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#showExpenseImage" prefHeight="55.0" prefWidth="55.0" ripplerFill="#dadada" styleClass="button_aeds" text="" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="expenses_button_save" layoutX="90.0" layoutY="715.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#saveExpenseTable" prefHeight="55.0" prefWidth="55.0" ripplerFill="#dadada" styleClass="button_aeds" text="" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXDatePicker fx:id="expenses_dp_startingDate" editable="false" layoutX="500.0" layoutY="110.0" onAction="#search" opacity="0.75" prefHeight="50.0" prefWidth="200.0" promptText="Starting Date" />
+                        <JFXDatePicker fx:id="expenses_dp_endingDate" editable="false" layoutX="750.0" layoutY="110.0" onAction="#search" opacity="0.75" prefHeight="50.0" prefWidth="200.0" promptText="Ending Date" />
+                        <JFXComboBox fx:id="expenses_cb_column" focusColor="#009688" layoutX="1000.0" layoutY="110.0" onAction="#search" opacity="0.75" prefHeight="50.0" prefWidth="190.0" promptText="Column">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXComboBox>
+                        <JFXTextField fx:id="expenses_tf_search" focusColor="#009688" layoutX="1250.0" layoutY="110.0" onAction="#search" opacity="0.75" prefHeight="50.0" prefWidth="190.0" promptText="Search From Column" />
+                        <JFXButton fx:id="expenses_button_clearStartingDate" layoutX="642.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#expenses_clearStartingDate" prefHeight="22.0" prefWidth="22.0" ripplerFill="#009688" styleClass="filter-clear" text="" textFill="#898989">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="expenses_button_clearEndingDate" layoutX="891.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#expenses_clearEndingDate" prefHeight="22.0" prefWidth="22.0" ripplerFill="#009688" styleClass="filter-clear" text="" textFill="#898989">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="expenses_button_clearSearch" layoutX="1418.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#expenses_clearSearch" prefHeight="22.0" prefWidth="22.0" ripplerFill="#009688" styleClass="filter-clear" text="" textFill="#898989">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXCheckBox fx:id="expenses_cb_includeCancelledRecords" layoutX="1234.0" layoutY="50.0" onAction="#search" opacity="0.7" text="Include cancelled records">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXCheckBox>
+                        <JFXComboBox fx:id="expenses_cb_dateColumn" focusColor="#009688" layoutX="250.0" layoutY="110.0" onAction="#search" opacity="0.75" prefHeight="50.0" prefWidth="190.0" promptText="Date Column">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXComboBox>
+                        <Label fx:id="expenses_message" layoutX="170.0" layoutY="38.0" opacity="0.7" prefHeight="25.0" prefWidth="742.0" text="To search for records with no value, type &quot;null&quot; on the search field">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="expenses_button_message" layoutX="125.0" layoutY="32.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#expenses_message" prefHeight="38.0" prefWidth="38.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: #05e6bc;" text="!" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXCheckBox fx:id="expenses_cb_searchExactMatch" layoutX="1000.0" layoutY="50.0" onAction="#search" opacity="0.7" text="Search by exact match">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXCheckBox>
+                        <JFXButton fx:id="expenses_button_toInventory" layoutX="90.0" layoutY="515.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#expenses_inventory" prefHeight="55.0" prefWidth="55.0" ripplerFill="#dadada" styleClass="button_aeds" text="" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="expenses_button_toVendors" layoutX="90.0" layoutY="615.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#expenses_vendors" prefHeight="55.0" prefWidth="55.0" ripplerFill="#dadada" styleClass="button_aeds" text="" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <Line endX="220.0" endY="97.0" layoutX="-104.0" layoutY="180.0" opacity="0.5" startX="220.0" startY="-81.0" stroke="#828282" />
+                        <Line endX="424.0" endY="38.5" layoutX="479.0" layoutY="60.0" opacity="0.5" startX="-363.5" startY="38.5" stroke="#828282" />
+                        <Line endX="173.5" endY="38.0" layoutX="730.0" layoutY="60.0" opacity="0.5" startX="259.0" startY="-42.0" stroke="#828282" />
+                        <Line endX="458.0" endY="-70.70710754394531" layoutX="991.0" layoutY="88.0" opacity="0.5" startX="-1.2928466796875" startY="-70.70710754394531" stroke="#828282" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+         </children>
+         <effect>
+            <DropShadow color="#5e5e5e" />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>

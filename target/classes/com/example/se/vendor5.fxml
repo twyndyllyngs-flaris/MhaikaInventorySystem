@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1174.0" prefWidth="827.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se.Vendor5Controller">
+   <children>
+      <AnchorPane layoutX="239.0" layoutY="106.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="927.0" prefWidth="390.0" style="-fx-background-radius: 10px; -fx-background-color: #ebf2ed;">
+         <children>
+            <JFXTextField fx:id="tf_deliveredTo" focusColor="#b58436" layoutX="45.0" layoutY="160.0" opacity="0.75" prefHeight="45.0" prefWidth="300.0" promptText="Delivered To" unFocusColor="#ae8585">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <Label fx:id="lbl_message" alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="793.0" opacity="0.5" prefHeight="65.0" prefWidth="390.0" text="Delivery fees will automatically default to 0 if left with no value" textAlignment="CENTER" wrapText="true">
+               <padding>
+                  <Insets left="30.0" right="25.0" />
+               </padding>
+            </Label>
+            <JFXButton fx:id="pb_continue" layoutX="87.0" layoutY="726.0" onAction="#submit" prefHeight="53.0" prefWidth="212.0" ripplerFill="WHITE" style="-fx-background-color: #ffb17d;" text="Continue" textFill="WHITE">
+               <font>
+                  <Font name="Gadugi Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="pb_close" layoutX="355.0" layoutY="15.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#close" prefHeight="18.0" prefWidth="18.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: orange; -fx-border-style: solid; -fx-border-color: #808080; -fx-border-width: 1; -fx-border-radius: 50 50 50 50;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="115.0" opacity="0.75" prefHeight="17.0" prefWidth="390.0" text="5 / 5" />
+            <JFXButton fx:id="lbl_notice" layoutX="182.0" layoutY="864.0" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#hover" onMouseExited="#hoverExit" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: #05e6bc;" text="!" textFill="WHITE" />
+            <JFXTextField fx:id="tf_deliveredFrom" focusColor="#b58436" layoutX="45.0" layoutY="240.0" opacity="0.75" prefHeight="45.0" prefWidth="300.0" promptText="Delivered From" unFocusColor="#ae8585">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="tf_shipmentPreference" focusColor="#b58436" layoutX="45.0" layoutY="320.0" opacity="0.75" prefHeight="45.0" prefWidth="300.0" promptText="Shipment Preference" unFocusColor="#ae8585">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXButton fx:id="pb_back" layoutX="20.0" layoutY="12.0" onAction="#back" text="" textFill="#8a8a8a">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXDatePicker fx:id="dp_expectedDeliveryDate" defaultColor="#b58436" editable="false" layoutX="45.0" layoutY="480.0" opacity="0.75" prefHeight="45.0" prefWidth="335.0" promptText="Expected Delivery Date" />
+            <JFXComboBox fx:id="cb_paymentTerms" focusColor="#b58436" layoutX="45.0" layoutY="640.0" onAction="#changePaymentTerms" opacity="0.75" prefHeight="45.0" prefWidth="135.0" promptText="Payment Terms" unFocusColor="#ae8585" />
+            <JFXTextField fx:id="tf_fees" focusColor="#b58436" layoutX="210.0" layoutY="640.0" opacity="0.75" prefHeight="45.0" prefWidth="135.0" promptText="Delivery Fees" unFocusColor="#ae8585">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="tf_trackingNumber" focusColor="#b58436" layoutX="45.0" layoutY="400.0" opacity="0.75" prefHeight="45.0" prefWidth="300.0" promptText="Tracking Number" unFocusColor="#ae8585">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXDatePicker fx:id="dp_paymentDate" defaultColor="#b58436" editable="false" layoutX="45.0" layoutY="560.0" opacity="0.75" prefHeight="45.0" prefWidth="335.0" promptText="Date of Payment" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="238.0" layoutY="168.0" opacity="0.75" prefHeight="45.0" prefWidth="390.0" text="DELIVERY DETAILS">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="iv_logo" fitHeight="241.0" fitWidth="253.0" layoutX="315.0" layoutY="-35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo_transparent.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+   </children>
+</AnchorPane>

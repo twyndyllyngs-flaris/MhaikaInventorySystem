@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="536.0" prefWidth="600.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se.NewExpenseConfirmationController">
+   <children>
+      <AnchorPane layoutX="115.0" layoutY="104.0" maxHeight="477.0" maxWidth="457.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="351.0" prefWidth="370.0" style="-fx-background-color: #ebf2ed; -fx-background-radius: 10 10 10 10;">
+         <children>
+            <Label fx:id="lbl_title" alignment="CENTER" contentDisplay="CENTER" layoutY="25.0" opacity="0.6" prefHeight="119.0" prefWidth="370.0" style="-fx-background-radius: 10 10 0 0;" text="CHOOSE A SUPPLIER" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="cb_companyName" focusColor="#808080" layoutX="36.0" layoutY="116.0" opacity="0.75" prefHeight="56.0" prefWidth="304.0" promptText="COMPANY NAME" styleClass="center-aligned" unFocusColor="#868686">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXComboBox>
+            <Label alignment="CENTER" layoutX="30.0" layoutY="216.0" opacity="0.6" prefHeight="35.0" prefWidth="311.0" text="OR">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_addNewProvider" layoutX="105.0" layoutY="290.0" onMouseClicked="#createNewExpense" text="CREATE A NEW PROVIDER" textFill="#2c95b5">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="pb_continue" layoutX="275.0" layoutY="10.0" onAction="#submit" prefHeight="30.0" prefWidth="81.0" ripplerFill="WHITE" style="-fx-background-color: #60aec5;" text="CONTINUE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="pb_back" layoutX="10.0" layoutY="10.0" onAction="#back" text="" textFill="#8a8a8a">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow color="#545454" />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>

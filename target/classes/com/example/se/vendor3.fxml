@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1110.0" prefWidth="917.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se.Vendor3Controller">
+   <children>
+      <AnchorPane layoutX="298.0" layoutY="99.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="883.0" prefWidth="361.0" style="-fx-background-radius: 10px; -fx-background-color: #ebf2ed;">
+         <children>
+            <JFXTextField fx:id="tf_title" alignment="TOP_LEFT" focusColor="#b58436" layoutX="50.0" layoutY="240.0" opacity="0.75" prefHeight="45.0" prefWidth="265.0" promptText="Title" unFocusColor="#ae8585">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <Label fx:id="lbl_message" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="743.0" opacity="0.5" prefHeight="65.0" prefWidth="361.0" text="Title are required for non-product expenses" textAlignment="CENTER" wrapText="true">
+               <padding>
+                  <Insets left="30.0" right="25.0" />
+               </padding>
+            </Label>
+            <JFXButton fx:id="pb_continue" layoutX="91.0" layoutY="680.0" onAction="#submit" prefHeight="45.0" prefWidth="185.0" ripplerFill="#ffcc00" style="-fx-background-color: #ffb17d;" text="Continue" textFill="#eeeeda">
+               <font>
+                  <Font name="Gadugi Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="pb_close" layoutX="329.0" layoutY="16.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#close" prefHeight="18.0" prefWidth="18.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: orange; -fx-border-style: solid; -fx-border-color: #808080; -fx-border-width: 1; -fx-border-radius: 50 50 50 50;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="115.0" opacity="0.75" prefHeight="17.0" prefWidth="361.0" text="3 / 5" />
+            <JFXButton fx:id="lbl_notice" layoutX="168.0" layoutY="818.0" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#hover" onMouseExited="#hoverExit" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: #05e6bc;" text="!" textFill="WHITE" />
+            <JFXTextField fx:id="tf_quantity" alignment="TOP_LEFT" focusColor="#b58436" layoutX="50.0" layoutY="330.0" opacity="0.75" prefHeight="45.0" prefWidth="143.0" promptText="Quantity" unFocusColor="#ae8585">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="tf_totalItemCost" alignment="TOP_LEFT" focusColor="#b58436" layoutX="50.0" layoutY="400.0" opacity="0.75" prefHeight="45.0" prefWidth="265.0" promptText="Total Item Cost" unFocusColor="#ae8585">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXComboBox fx:id="cb_type" focusColor="#b58436" layoutX="50.0" layoutY="160.0" onAction="#typeChange" opacity="0.75" prefHeight="45.0" prefWidth="265.0" promptText="Type" style="-fx-text-alignment: center;" unFocusColor="#ae8585" />
+            <JFXTextArea fx:id="ta_description" focusColor="#b58436" layoutX="50.0" layoutY="480.0" opacity="0.75" prefHeight="45.0" prefWidth="265.0" promptText="Description" styleClass="centeredTextArea" unFocusColor="#ae8585">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextArea>
+            <JFXButton fx:id="pb_back" layoutX="20.0" layoutY="12.0" onAction="#back" text="" textFill="#8a8a8a">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXTextField fx:id="tf_image" alignment="TOP_LEFT" editable="false" focusColor="#b58436" focusTraversable="false" layoutX="50.0" layoutY="570.0" onMouseClicked="#getFile" opacity="0.75" prefHeight="45.0" prefWidth="265.0" promptText="Image                                                            " unFocusColor="#ae8585">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXTextField>
+            <Label layoutX="120.0" layoutY="530.0" opacity="0.5" text="(Will reflect in products)" />
+            <Label layoutX="120.0" layoutY="620.0" opacity="0.5" text="(Will reflect in products)" />
+            <JFXComboBox fx:id="cb_measurement" focusColor="#b58436" layoutX="207.0" layoutY="305.0" onAction="#measurementChange" opacity="0.75" prefHeight="70.0" prefWidth="108.0" promptText="Measurement" style="-fx-text-alignment: center;" unFocusColor="#ae8585" />
+            <Label layoutX="90.0" layoutY="290.0" opacity="0.5" text="(Required for non-product entries)" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <Line endX="23.0" endY="-1.52587890625E-5" layoutX="518.0" layoutY="1016.0" startX="-100.0" stroke="#e7eaa0" strokeWidth="5.0">
+         <effect>
+            <Glow />
+         </effect>
+      </Line>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="299.0" layoutY="161.0" opacity="0.75" prefHeight="45.0" prefWidth="361.0" text="EXPENSE DETAILS">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="212.0" fitWidth="218.0" layoutX="374.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo_transparent.png" />
+         </image>
+         <effect>
+            <DropShadow radius="9.2575" spread="0.12" width="18.03" />
+         </effect>
+      </ImageView>
+   </children>
+</AnchorPane>

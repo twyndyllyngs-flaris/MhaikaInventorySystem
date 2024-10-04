@@ -1,0 +1,9 @@
+.jfx-combo-box > .prompt-container {
+    -fx-alignment: center;
+}
+
+.jfx-combo-box > .list-cell {
+    -fx-alignment: center;
+    -fx-padding: 0 0 0 25;
+}
+

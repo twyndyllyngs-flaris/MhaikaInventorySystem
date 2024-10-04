@@ -1,0 +1,22 @@
+
+.jfx-combo-box > .prompt-container {
+    -fx-alignment: center-left;
+}
+
+.jfx-combo-box > .list-cell {
+    -fx-alignment: center-left;
+}
+
+
+/*.centeredTextArea .scroll-pane .content .text {
+    -fx-text-alignment: center;
+}*
+
+
+.text-area:empty {
+    -fx-alignment: center ;
+}
+.text-area:empty:focused {
+    -fx-alignment: center-left ;
+}*/
+

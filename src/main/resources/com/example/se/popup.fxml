@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="550.0" prefWidth="900.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se.PopUpController">
+   <children>
+      <AnchorPane layoutX="225.0" layoutY="138.0" maxHeight="245.0" maxWidth="450.0" prefHeight="245.0" prefWidth="450.0" style="-fx-background-color: #fcfcfa; -fx-background-radius: 10 10 10 10;">
+         <children>
+            <Label prefHeight="51.0" prefWidth="450.0" style="-fx-background-color: #dae0dc #dae0dc; -fx-background-radius: 10 10 0 0;" textAlignment="CENTER">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" color="#c9c9c9" height="3.47" offsetY="1.0" radius="0.36750000000000005" width="0.0" />
+               </effect>
+            </Label>
+            <Label fx:id="lbl_message" alignment="CENTER" layoutY="83.0" opacity="0.7" prefHeight="77.0" prefWidth="450.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et justo quis diam pulvinar cursus. Praesent sed suscipit lacus, in viverra lacus. Ut imperdiet sem dolor, non dignissim orci cursus ut." textAlignment="CENTER" wrapText="true">
+               <padding>
+                  <Insets left="25.0" right="25.0" />
+               </padding>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="pb_close" layoutX="420.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#close" prefHeight="18.0" prefWidth="18.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: orange; -fx-border-color: #4a4343; -fx-border-radius: 50 50 50 50;" text="Button">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <Label fx:id="lbl_title" alignment="CENTER" layoutX="105.0" opacity="0.75" prefHeight="51.0" prefWidth="238.0" style="-fx-background-radius: 10 10 0 0;" text="Sample Title" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Label>
+            <JFXButton fx:id="pb_submit" layoutX="155.0" layoutY="173.0" onAction="#submit" prefHeight="38.0" prefWidth="140.0" ripplerFill="WHITE" style="-fx-background-color: #ffb17d;" text="Cancel" textFill="WHITE">
+               <font>
+                  <Font name="Gadugi Bold" size="12.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect></AnchorPane>
+   </children>
+</AnchorPane>

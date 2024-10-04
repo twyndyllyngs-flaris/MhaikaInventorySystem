@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="897.0" prefWidth="669.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se.Vendor2Controller">
+   <children>
+      <AnchorPane layoutX="171.0" layoutY="134.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="328.0" style="-fx-background-radius: 10px; -fx-background-color: #ebf2ed;">
+         <children>
+            <JFXTextField fx:id="tf_mobile" alignment="CENTER" focusColor="#b58436" layoutX="50.0" layoutY="160.0" opacity="0.75" prefHeight="45.0" prefWidth="229.0" promptText="Mobile (ex. 09079217943)" unFocusColor="#ae8585">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <Label fx:id="lbl_message" alignment="CENTER" contentDisplay="CENTER" layoutX="48.0" layoutY="554.0" opacity="0.5" prefHeight="65.0" prefWidth="238.0" text="Please provide record for either mobile or telephone" textAlignment="CENTER" wrapText="true">
+               <padding>
+                  <Insets left="25.0" right="25.0" />
+               </padding>
+            </Label>
+            <JFXButton fx:id="pb_continue" layoutX="72.0" layoutY="486.0" onAction="#submit" prefHeight="45.0" prefWidth="184.0" ripplerFill="WHITE" style="-fx-background-color: #ffb17d;" text="Continue" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="pb_close" layoutX="296.0" layoutY="12.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#close" prefHeight="18.0" prefWidth="18.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: orange; -fx-border-style: solid; -fx-border-color: #808080; -fx-border-width: 1; -fx-border-radius: 50 50 50 50;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton fx:id="pb_back" layoutX="14.0" layoutY="9.0" onAction="#back" text="" textFill="#8a8a8a">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <Label layoutX="154.0" layoutY="116.0" opacity="0.75" text="2 / 5" />
+            <JFXButton fx:id="lbl_notice" layoutX="153.0" layoutY="628.0" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#hover" onMouseExited="#hoverExit" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: #05e6bc;" text="!" textFill="WHITE" />
+            <JFXTextField fx:id="tf_telephone" alignment="CENTER" focusColor="#b58436" layoutX="50.0" layoutY="240.0" opacity="0.75" prefHeight="45.0" prefWidth="229.0" promptText="Telephone" unFocusColor="#ae8585">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="tf_email" alignment="CENTER" focusColor="#b58436" layoutX="50.0" layoutY="320.0" opacity="0.75" prefHeight="45.0" prefWidth="229.0" promptText="Email" unFocusColor="#ae8585">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="tf_website" alignment="CENTER" focusColor="#b58436" layoutX="50.0" layoutY="400.0" opacity="0.75" prefHeight="45.0" prefWidth="229.0" promptText="Website" unFocusColor="#ae8585">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <Label layoutX="140.0" layoutY="210.0" opacity="0.5" text="(Required)" />
+            <Label layoutX="140.0" layoutY="290.0" opacity="0.5" text="(Required)" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <Line endX="23.0" endY="-1.52587890625E-5" layoutX="377.0" layoutY="845.0" startX="-100.0" stroke="#e7eaa0" strokeWidth="5.0">
+         <effect>
+            <Glow />
+         </effect>
+      </Line>
+      <Label layoutX="194.0" layoutY="194.0" opacity="0.75" text="SUPPLIER CONTACT">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="212.0" fitWidth="218.0" layoutX="233.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo_transparent.png" />
+         </image>
+         <effect>
+            <DropShadow radius="9.2575" spread="0.12" width="18.03" />
+         </effect>
+      </ImageView>
+   </children>
+</AnchorPane>
