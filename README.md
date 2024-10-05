@@ -16,9 +16,4 @@
 
 
 <h3 align="center"> Here are some screenshots of how the application looks </h3>
-![Screenshot 2024-10-05 091630](https://github.com/user-attachments/assets/1c933319-d0ac-4211-a74d-f1b4d75dda79)
-![Screenshot 2024-10-05 091703](https://github.com/user-attachments/assets/0cd40a10-eec4-484f-85bb-d6b4126b89ef)
-![Screenshot 2024-10-05 091857](https://github.com/user-attachments/assets/6edaa9f2-8268-49f3-b59d-568383ead389)
-![Screenshot 2024-10-05 091846](https://github.com/user-attachments/assets/3739e4c2-3373-456b-bb05-674a3dbcd9da)
-![Screenshot 2024-10-05 091803](https://github.com/user-attachments/assets/42dca294-b321-43e3-9a1a-35c6fe65de46)
-![Screenshot 2024-10-05 091751](https://github.com/user-attachments/assets/35051da4-7567-4e20-a5e9-0cc0d993274a)
+![Alt text](screenshots/1.png)
