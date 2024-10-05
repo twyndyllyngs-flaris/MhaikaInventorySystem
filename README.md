@@ -16,7 +16,7 @@
 
 
 <h3 align="center"> Here are some screenshots of how the application looks </h3>
-![Alt text](screenshots/1.png)
+![Alt text](https://github.com/twyndyllyngs-flaris/MhaikaInventorySystem/blob/main/screenshots/1.png?raw=true)
 ![Alt text](screenshots/2.png)
 ![Alt text](screenshots/3.png)
 ![Alt text](screenshots/4.png)
