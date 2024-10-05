@@ -1,6 +1,6 @@
-<h2 align="center"> This is our final output for 3rd year software engineer course. </h2>
+<h3 align="center"> This is our final output for 3rd year software engineer course. </h3>
 
-<h2 align="center"> This is not compiled or built with .exe so you have to set up on your local machine </h2>
+<h3 align="center"> This is not compiled or built with .exe so you have to set up on your local machine </h3>
 
 <h3 align="center"> How to setup on IntelliJ IDEA </h3>
 <h5> 1. Download XAMPP and start both Apache and MySQL </h5>
@@ -14,4 +14,4 @@
 <h5> 9. Modify the line of code Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/se_system", "root", ""); - replace username and password</h5>
 <h5> 10. Rebuild the project or simply run it. </h5>
 
-<h2 align="center"> Here are the screenshots of how the application looks </h2>
+<h3 align="center"> Here are the screenshots of how the application looks </h3>
