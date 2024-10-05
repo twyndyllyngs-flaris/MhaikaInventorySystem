@@ -16,4 +16,5 @@
 
 
 <h3 align="center"> Here are some screenshots of how the application looks </h3>
+
 ![Alt text](/screenshots/1.png)
