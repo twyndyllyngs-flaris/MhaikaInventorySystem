@@ -18,3 +18,13 @@
 <h3 align="center"> Here are some screenshots of how the application looks </h3>
 
 ![Alt text](/screenshots/1.png)
+
+![Alt text](/screenshots/2.png)
+
+![Alt text](/screenshots/3.png)
+
+![Alt text](/screenshots/4.png)
+
+![Alt text](/screenshots/5.png)
+
+![Alt text](/screenshots/6.png)
