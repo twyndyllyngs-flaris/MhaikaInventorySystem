@@ -1,7 +1,8 @@
-<h2 align="center"> This is our final output for 3rd year software engineer course. </h1>
+<h2 align="center"> This is our final output for 3rd year software engineer course. </h1>\
+
 <h3 align="center"> This is not compiled or built with .exe so you have to set up on your local machine </h1>
 
-<h2 align="center"> How to setup on IntelliJ IDEA </h2>
+<h3 align="center"> How to setup on IntelliJ IDEA </h2>
 <h3 > 1. Download XAMPP and start both Apache and MySQL </h3>
 <h3 > 2. After installing XAMPP, go to http://localhost/phpmyadmin/ </h3>
 <h3> 3. Create a new database named "se_system". </h3>
@@ -14,10 +15,3 @@
 <h3> 10. Rebuild the project or simply run it. </h3>
 
 <h2 align="center"> Here are the screenshots of how the application looks </h2>
-
-
-- 🔭 I’m currently working on [qweqwe](https://github.com/)
-
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-</p>
